@@ -1,0 +1,248 @@
+name: coba_aja_workspace
+publish_to: "none"
+
+environment:
+  sdk: ^3.10.8
+
+dev_dependencies:
+  melos: ^7.4.0
+
+workspace:
+  - app
+  - packages/navigation
+  - packages/core/domain
+  - packages/core/data
+  - packages/features/sign_up
+  - packages/features/sign_in
+
+melos:
+  command:
+    bootstrap:
+      runPubGetInParallel: true # Enable parallel pub get for faster bootstrap
+
+  scripts:
+    bs_custom:
+      run: dart tool/bootstrap.dart
+      description: Bootstrap with custom concurrent script
+
+    build:
+      run: dart run build_runner build --delete-conflicting-outputs
+      exec:
+        concurrency: 7
+        failFast: false
+      description: Run build_runner build in all packages (max 3 concurrent)
+      packageFilters:
+        dependsOn: "build_runner"
+
+    build_custom:
+      run: dart tool/build.dart
+      description: Build with custom concurrent script
+
+    build_watch:
+      run: dart run build_runner watch --delete-conflicting-outputs
+      exec:
+        concurrency: 1
+      description: Run build_runner watch
+      packageFilters:
+        dependsOn: "build_runner"
+
+    build_clean:
+      run: dart run build_runner clean
+      exec:
+        concurrency: 7
+      description: Clean generated files
+      packageFilters:
+        dependsOn: "build_runner"
+
+    # Analyze all packages
+    analyze:
+      run: flutter analyze
+      exec:
+        concurrency: 7
+      description: Run flutter analyze in all packages
+
+    # Format all dart files
+    format:
+      run: dart format .
+      description: Format all Dart files in workspace
+
+    # Fix lint issues
+    fix:
+      run: dart fix --apply
+      exec:
+        concurrency: 7
+      description: Auto-fix lint issues
+
+    # Run tests in all packages
+    test:
+      run: flutter test
+      exec:
+        concurrency: 7
+        failFast: false
+      description: Run tests in all packages
+      packageFilters:
+        dirExists: "test"
+
+    # Test with coverage
+    test_coverage:
+      run: flutter test --coverage
+      exec:
+        concurrency: 7
+      description: Run tests with coverage
+      packageFilters:
+        dirExists: "test"
+
+    # Clean build artifacts
+    clean:
+      run: flutter clean
+      exec:
+        concurrency: 7
+      description: Clean all packages
+
+    # Deep clean (termasuk pub cache)
+    clean_deep:
+      run: |
+        flutter clean
+        rm -rf .dart_tool
+        rm -rf pubspec.lock
+      exec:
+        concurrency: 1
+      description: Deep clean including .dart_tool and pubspec.lock
+
+    # Get dependencies di semua packages
+    get:
+      run: flutter pub get
+      exec:
+        concurrency: 7
+      description: Get dependencies in all packages
+
+    # Upgrade dependencies
+    upgrade:
+      run: flutter pub upgrade
+      exec:
+        concurrency: 7
+      description: Upgrade dependencies in all packages
+
+    # Check for outdated packages
+    outdated:
+      run: flutter pub outdated
+      exec:
+        concurrency: 1
+      description: Check outdated dependencies
+
+    # Note: melos list, melos list --long, melos list --graph are built-in commands
+
+    # Build hanya presentation layers
+    build_presentation:
+      run: dart run build_runner build --delete-conflicting-outputs
+      exec:
+        concurrency: 7
+      description: Build code gen for presentation packages only
+      packageFilters:
+        scope: "*_presentation"
+        dependsOn: "build_runner"
+
+    # Test hanya feature packages
+    test_features:
+      run: flutter test
+      exec:
+        concurrency: 5
+        failFast: false
+      description: Test all feature packages (presentation, domain, data)
+      packageFilters:
+        scope:
+          - "*_presentation"
+          - "*_domain"
+          - "*_data"
+        dirExists: "test"
+
+    # Analyze hanya yang berubah (untuk CI/CD)
+    analyze_changed:
+      run: flutter analyze
+      exec:
+        concurrency: 7
+      description: Analyze only changed packages
+      packageFilters:
+        diff: "origin/main"
+
+    # Test hanya yang berubah
+    test_changed:
+      run: flutter test
+      exec:
+        concurrency: 5
+      description: Test only changed packages
+      packageFilters:
+        diff: "origin/main"
+        dirExists: "test"
+
+    # Full check untuk pre-commit/CI
+    check:
+      run: |
+        echo "🔍 Running code quality checks..."
+        melos run format
+        melos run analyze
+        melos run test
+        echo "All checks passed!"
+      description: Full quality check (format, analyze, test)
+
+    # Quick check (tanpa test)
+    check_quick:
+      run: |
+        echo "⚡ Running quick checks..."
+        melos run format
+        melos run analyze
+        echo "Quick checks passed!"
+      description: Quick check (format & analyze only)
+
+    # === Development Workflow ===
+    # Full dev setup: bootstrap + build + run
+    dev:
+      run: |
+        echo "Setting up development environment..."
+        melos bootstrap
+        echo "Building generated files..."
+        melos run build
+        echo "Starting app..."
+        flutter run
+      description: Complete dev setup (bootstrap + build + run)
+
+    # Quick dev: skip bootstrap kalau udah ada
+    dev_quick:
+      run: |
+        echo "Building generated files..."
+        melos run build
+        echo "starting app..."
+        flutter run
+      description: Quick dev (build + run without bootstrap)
+
+    # === Maintenance ===
+    # Update SDK version across all packages
+    update_sdk:
+      run: |
+        echo "Current SDK constraint: ^3.9.2"
+        echo "Enter new SDK version (e.g., 3.10.0):"
+        read NEW_SDK
+        echo "Updating SDK to ^$NEW_SDK in all packages..."
+        find packages -name "pubspec.yaml" -exec sed -i "s/sdk: \^[0-9.]\+/sdk: ^$NEW_SDK/g" {} \;
+        echo "SDK updated in all packages!"
+        echo "Don't forget to update root pubspec.yaml manually"
+      description: Update SDK version across all packages
+
+    # Sync version from root to all packages (optional)
+    sync_version:
+      run: |
+        ROOT_VERSION=$(grep "^version:" pubspec.yaml | head -1 | awk '{print $2}')
+        echo "Root version: $ROOT_VERSION"
+        echo "Syncing version to all packages..."
+        find packages -name "pubspec.yaml" -exec sed -i "s/^version: .*/version: $ROOT_VERSION/" {} \;
+        echo "Version synced to all packages!"
+      description: Sync version from root to all packages
+
+    # Remove version from all packages (for internal packages)
+    remove_version:
+      run: |
+        echo "Removing version from all internal packages..."
+        find packages -name "pubspec.yaml" -exec sed -i '/^version: /d' {} \;
+        echo "Version field removed from all packages!"
+        echo "Version is now only managed in root pubspec.yaml"
+      description: Remove version field from internal packages

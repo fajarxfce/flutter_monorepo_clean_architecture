@@ -1,0 +1,4 @@
+dependency_overrides:
+  build_runner: ^2.11.0
+  json_annotation: ^4.10.0
+  json_serializable: ^6.12.0
