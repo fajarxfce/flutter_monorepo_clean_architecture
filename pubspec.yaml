@@ -16,6 +16,8 @@ workspace:
   - packages/navigation
   - packages/core/domain
   - packages/core/data
+  - packages/core/database
+  - packages/core/model
   - packages/features/sign_up
   - packages/features/sign_in
   - packages/features/main

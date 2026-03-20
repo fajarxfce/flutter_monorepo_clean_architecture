@@ -176,6 +176,24 @@
       "languageVersion": "3.9"
     },
     {
+      "name": "dartz",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/dartz-0.10.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "dio",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/dio-5.9.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "dio_web_adapter",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/dio_web_adapter-2.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
       "name": "equatable",
       "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/equatable-2.0.8",
       "packageUri": "lib/",
@@ -224,6 +242,12 @@
       "languageVersion": "3.8"
     },
     {
+      "name": "flutter_staggered_grid_view",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/flutter_staggered_grid_view-0.7.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///opt/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -234,6 +258,12 @@
       "rootUri": "file:///opt/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "3.9"
+    },
+    {
+      "name": "formz",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/formz-0.8.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
     },
     {
       "name": "frontend_server_client",
@@ -280,6 +310,12 @@
     {
       "name": "http_parser",
       "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/http_parser-4.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "infinite_scroll_pagination",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/infinite_scroll_pagination-5.1.1",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
@@ -458,6 +494,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "protobuf",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/protobuf-6.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.7"
+    },
+    {
       "name": "provider",
       "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/provider-6.1.5+1",
       "packageUri": "lib/",
@@ -486,6 +528,18 @@
       "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/recase-4.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "retrofit",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/retrofit-4.9.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.8"
+    },
+    {
+      "name": "retrofit_generator",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/retrofit_generator-10.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.8"
     },
     {
       "name": "shared_preferences",
@@ -546,6 +600,12 @@
       "rootUri": "file:///opt/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "3.9"
+    },
+    {
+      "name": "sliver_tools",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/sliver_tools-0.2.12",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "source_gen",
@@ -714,6 +774,18 @@
       "rootUri": "../packages/core/data",
       "packageUri": "lib/",
       "languageVersion": "3.10"
+    },
+    {
+      "name": "database",
+      "rootUri": "../packages/core/database",
+      "packageUri": "lib/",
+      "languageVersion": "3.11"
+    },
+    {
+      "name": "model",
+      "rootUri": "../packages/core/model",
+      "packageUri": "lib/",
+      "languageVersion": "3.11"
     },
     {
       "name": "sign_up",
