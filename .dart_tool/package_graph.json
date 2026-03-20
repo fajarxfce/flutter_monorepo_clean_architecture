@@ -9,6 +9,7 @@
     "main",
     "model",
     "navigation",
+    "network",
     "profile",
     "shared",
     "sign_in",
@@ -142,6 +143,20 @@
       "devDependencies": [
         "flutter_lints",
         "flutter_test"
+      ]
+    },
+    {
+      "name": "network",
+      "version": "0.0.1",
+      "dependencies": [
+        "flutter",
+        "shared"
+      ],
+      "devDependencies": [
+        "build_runner",
+        "flutter_lints",
+        "flutter_test",
+        "injectable_generator"
       ]
     },
     {

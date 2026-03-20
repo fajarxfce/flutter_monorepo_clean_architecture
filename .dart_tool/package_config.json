@@ -788,6 +788,12 @@
       "languageVersion": "3.11"
     },
     {
+      "name": "network",
+      "rootUri": "../packages/core/network",
+      "packageUri": "lib/",
+      "languageVersion": "3.11"
+    },
+    {
       "name": "sign_up",
       "rootUri": "../packages/features/sign_up",
       "packageUri": "lib/",
