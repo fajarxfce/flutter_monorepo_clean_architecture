@@ -11,6 +11,7 @@ dev_dependencies:
 
 workspace:
   - app
+  - packages/core/widgets
   - packages/navigation
   - packages/core/domain
   - packages/core/data

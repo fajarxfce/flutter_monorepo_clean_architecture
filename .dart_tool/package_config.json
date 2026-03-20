@@ -596,6 +596,12 @@
       "languageVersion": "3.10"
     },
     {
+      "name": "widgets",
+      "rootUri": "../packages/core/widgets",
+      "packageUri": "lib/",
+      "languageVersion": "3.11"
+    },
+    {
       "name": "navigation",
       "rootUri": "../packages/navigation",
       "packageUri": "lib/",

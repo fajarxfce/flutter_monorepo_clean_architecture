@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:navigation/navigation.dart';
+import 'package:widgets/widgets.dart';
 
 import '../bloc/sign_in_bloc.dart';
 
@@ -47,53 +48,51 @@ class _SignInPageState extends State<SignInPage> {
         final isLoading = state is SignInLoading;
 
         return Scaffold(
-          appBar: AppBar(title: const Text('Sign In')),
           body: Padding(
             padding: const EdgeInsets.all(24),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextField(
-                  controller: _emailCtrl,
-                  decoration: const InputDecoration(labelText: 'Email'),
-                  keyboardType: TextInputType.emailAddress,
-                ),
-                const SizedBox(height: 12),
-                TextField(
-                  controller: _passwordCtrl,
-                  decoration: const InputDecoration(labelText: 'Password'),
-                  obscureText: true,
-                ),
-                const SizedBox(height: 24),
+            child: DoCard(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  DoText("Login to Your Account", variant: DoTextVariant.h3),
+                  SizedBox(height: 16),
+                  DoTextField(
+                    controller: _emailCtrl,
+                    label: 'Email',
+                    keyboardType: TextInputType.emailAddress,
+                  ),
+                  const SizedBox(height: 12),
+                  DoTextField(
+                    controller: _passwordCtrl,
+                    obscureText: true,
+                    label: 'Password',
+                  ),
+                  const SizedBox(height: 24),
 
-                // Sign In button — fires SignInSubmitted event
-                FilledButton(
-                  onPressed: isLoading
-                      ? null
-                      : () => context.read<SignInBloc>().add(
-                          SignInSubmitted(
-                            email: _emailCtrl.text,
-                            password: _passwordCtrl.text,
+                  // Sign In button — fires SignInSubmitted event
+                  DoButton(
+                    variant: DoButtonVariant.primary,
+                    onPressed: isLoading
+                        ? null
+                        : () => context.read<SignInBloc>().add(
+                            SignInSubmitted(
+                              email: _emailCtrl.text,
+                              password: _passwordCtrl.text,
+                            ),
                           ),
-                        ),
-                  child: isLoading
-                      ? const SizedBox(
-                          width: 20,
-                          height: 20,
-                          child: CircularProgressIndicator(strokeWidth: 2),
-                        )
-                      : const Text('Sign In'),
-                ),
-                const SizedBox(height: 12),
+                    text: 'Sign In',
+                  ),
+                  const SizedBox(height: 12),
 
-                // Go to Sign Up — fires SignInGoToSignUpPressed event
-                TextButton(
-                  onPressed: () {
-                    context.router.pushPath(AppRoutes.signUpPath('Anjasss'));
-                  },
-                  child: const Text("Don't have an account? Sign Up"),
-                ),
-              ],
+                  // Go to Sign Up — fires SignInGoToSignUpPressed event
+                  TextButton(
+                    onPressed: () {
+                      context.router.pushPath(AppRoutes.signUpPath('Anjasss'));
+                    },
+                    child: const Text("Don't have an account? Sign Up"),
+                  ),
+                ],
+              ),
             ),
           ),
         );
