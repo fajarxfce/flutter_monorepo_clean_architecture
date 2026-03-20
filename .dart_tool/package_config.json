@@ -56,6 +56,12 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "blocfx",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/blocfx-0.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.9"
+    },
+    {
       "name": "boolean_selector",
       "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/boolean_selector-2.1.2",
       "packageUri": "lib/",
@@ -182,6 +188,12 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "ffi",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/ffi-2.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.7"
+    },
+    {
       "name": "file",
       "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/file-7.0.1",
       "packageUri": "lib/",
@@ -214,6 +226,12 @@
     {
       "name": "flutter_test",
       "rootUri": "file:///opt/flutter/packages/flutter_test",
+      "packageUri": "lib/",
+      "languageVersion": "3.9"
+    },
+    {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///opt/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "3.9"
     },
@@ -386,6 +404,24 @@
       "languageVersion": "3.4"
     },
     {
+      "name": "path_provider_linux",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/path_provider_linux-2.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "path_provider_platform_interface",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/path_provider_platform_interface-2.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "path_provider_windows",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/path_provider_windows-2.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "petitparser",
       "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/petitparser-7.0.2",
       "packageUri": "lib/",
@@ -396,6 +432,12 @@
       "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/platform-3.1.6",
       "packageUri": "lib/",
       "languageVersion": "3.2"
+    },
+    {
+      "name": "plugin_platform_interface",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.8",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
     },
     {
       "name": "pool",
@@ -444,6 +486,48 @@
       "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/recase-4.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "shared_preferences",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/shared_preferences-2.5.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.9"
+    },
+    {
+      "name": "shared_preferences_android",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/shared_preferences_android-2.4.21",
+      "packageUri": "lib/",
+      "languageVersion": "3.9"
+    },
+    {
+      "name": "shared_preferences_foundation",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/shared_preferences_foundation-2.5.6",
+      "packageUri": "lib/",
+      "languageVersion": "3.9"
+    },
+    {
+      "name": "shared_preferences_linux",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/shared_preferences_linux-2.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "shared_preferences_platform_interface",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/shared_preferences_platform_interface-2.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "shared_preferences_web",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/shared_preferences_web-2.4.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "shared_preferences_windows",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/shared_preferences_windows-2.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
     },
     {
       "name": "shelf",
@@ -560,6 +644,12 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "xdg_directories",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/xdg_directories-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
       "name": "xml",
       "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/xml-6.6.1",
       "packageUri": "lib/",
@@ -596,6 +686,12 @@
       "languageVersion": "3.10"
     },
     {
+      "name": "shared",
+      "rootUri": "../packages/core/shared",
+      "packageUri": "lib/",
+      "languageVersion": "3.11"
+    },
+    {
       "name": "widgets",
       "rootUri": "../packages/core/widgets",
       "packageUri": "lib/",
@@ -630,6 +726,24 @@
       "rootUri": "../packages/features/sign_in",
       "packageUri": "lib/",
       "languageVersion": "3.10"
+    },
+    {
+      "name": "main",
+      "rootUri": "../packages/features/main",
+      "packageUri": "lib/",
+      "languageVersion": "3.11"
+    },
+    {
+      "name": "home",
+      "rootUri": "../packages/features/main/home",
+      "packageUri": "lib/",
+      "languageVersion": "3.11"
+    },
+    {
+      "name": "profile",
+      "rootUri": "../packages/features/main/profile",
+      "packageUri": "lib/",
+      "languageVersion": "3.11"
     }
   ],
   "generator": "pub",

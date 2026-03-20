@@ -11,12 +11,16 @@ dev_dependencies:
 
 workspace:
   - app
+  - packages/core/shared
   - packages/core/widgets
   - packages/navigation
   - packages/core/domain
   - packages/core/data
   - packages/features/sign_up
   - packages/features/sign_in
+  - packages/features/main
+  - packages/features/main/home
+  - packages/features/main/profile
 
 melos:
   command:

@@ -22,6 +22,12 @@ dependencies:
     path: ../packages/features/sign_in
   sign_up:
     path: ../packages/features/sign_up
+  main:
+    path: ../packages/features/main
+  home:
+    path: ../packages/features/main/home
+  profile:
+    path: ../packages/features/main/profile
   auto_route:
   injectable:
   get_it:

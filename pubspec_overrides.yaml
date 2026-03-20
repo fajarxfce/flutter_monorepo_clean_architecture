@@ -7,3 +7,4 @@ dependency_overrides:
   injectable: ^2.7.1+4
   injectable_generator: ^2.9.1
   get_it: ^9.2.1
+  blocfx: ^0.2.1

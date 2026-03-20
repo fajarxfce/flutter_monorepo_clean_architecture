@@ -72,14 +72,9 @@ class _SignInPageState extends State<SignInPage> {
                   // Sign In button — fires SignInSubmitted event
                   DoButton(
                     variant: DoButtonVariant.primary,
-                    onPressed: isLoading
-                        ? null
-                        : () => context.read<SignInBloc>().add(
-                            SignInSubmitted(
-                              email: _emailCtrl.text,
-                              password: _passwordCtrl.text,
-                            ),
-                          ),
+                    onPressed: () {
+                      context.router.pushPath(AppRoutes.main);
+                    },
                     text: 'Sign In',
                   ),
                   const SizedBox(height: 12),
