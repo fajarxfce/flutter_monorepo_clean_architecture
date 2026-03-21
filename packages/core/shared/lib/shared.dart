@@ -8,3 +8,6 @@ export 'package:retrofit/retrofit.dart';
 export 'package:dio/dio.dart' hide Headers;
 export 'package:formz/formz.dart';
 export 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+export 'package:json_annotation/json_annotation.dart';
+export 'package:flutter_bloc/flutter_bloc.dart';
+export 'package:freezed_annotation/freezed_annotation.dart';

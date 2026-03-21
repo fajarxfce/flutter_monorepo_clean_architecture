@@ -3,11 +3,16 @@
   <component name="ProjectModuleManager">
     <modules>
 <module fileurl="file://$PROJECT_DIR$/app/melos_app.iml" filepath="$PROJECT_DIR$/app/melos_app.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/domains/auth/melos_auth_domain.iml" filepath="$PROJECT_DIR$/packages/domains/auth/melos_auth_domain.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/core/data/melos_data.iml" filepath="$PROJECT_DIR$/packages/core/data/melos_data.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/core/database/melos_database.iml" filepath="$PROJECT_DIR$/packages/core/database/melos_database.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/core/domain/melos_domain.iml" filepath="$PROJECT_DIR$/packages/core/domain/melos_domain.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/features/main/home/melos_home.iml" filepath="$PROJECT_DIR$/packages/features/main/home/melos_home.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/features/main/melos_main.iml" filepath="$PROJECT_DIR$/packages/features/main/melos_main.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/core/model/melos_model.iml" filepath="$PROJECT_DIR$/packages/core/model/melos_model.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/navigation/melos_navigation.iml" filepath="$PROJECT_DIR$/packages/navigation/melos_navigation.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/core/network/melos_network.iml" filepath="$PROJECT_DIR$/packages/core/network/melos_network.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/domains/product/melos_product_domain.iml" filepath="$PROJECT_DIR$/packages/domains/product/melos_product_domain.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/features/main/profile/melos_profile.iml" filepath="$PROJECT_DIR$/packages/features/main/profile/melos_profile.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/core/shared/melos_shared.iml" filepath="$PROJECT_DIR$/packages/core/shared/melos_shared.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/features/sign_in/melos_sign_in.iml" filepath="$PROJECT_DIR$/packages/features/sign_in/melos_sign_in.iml"/>

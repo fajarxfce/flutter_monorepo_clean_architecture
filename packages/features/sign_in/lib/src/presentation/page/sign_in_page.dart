@@ -1,8 +1,7 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
-import 'package:navigation/navigation.dart';
+import 'package:shared/shared.dart';
+import 'package:sign_in/src/presentation/bloc/sign_in_event.dart';
+import 'package:sign_in/src/presentation/bloc/sign_in_state.dart';
 import 'package:widgets/widgets.dart';
 
 import '../bloc/sign_in_bloc.dart';
@@ -14,7 +13,7 @@ class SignInPage extends StatefulWidget implements AutoRouteWrapper {
   @override
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider(
-      create: (context) => GetIt.I<SignInBloc>(),
+      create: (context) => GetIt.instance<SignInBloc>(),
       child: this,
     );
   }
@@ -37,15 +36,9 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignInBloc, SignInState>(
-      listener: (context, state) {
-        if (state is SignInFailure) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text(state.message)));
-        }
-      },
+      listener: (context, state) {},
       builder: (context, state) {
-        final isLoading = state is SignInLoading;
+        final isLoading = state.status == SignInStatus.loading;
 
         return Scaffold(
           body: Padding(
@@ -73,7 +66,12 @@ class _SignInPageState extends State<SignInPage> {
                   DoButton(
                     variant: DoButtonVariant.primary,
                     onPressed: () {
-                      context.router.pushPath(AppRoutes.main);
+                      context.read<SignInBloc>().add(
+                        SignInSubmitted(
+                          email: _emailCtrl.text,
+                          password: _passwordCtrl.text,
+                        ),
+                      );
                     },
                     text: 'Sign In',
                   ),

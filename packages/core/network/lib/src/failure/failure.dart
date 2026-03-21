@@ -59,6 +59,15 @@ class NotFoundFailure extends Failure {
   String get message => _message;
 }
 
+class UnknownFailure extends Failure {
+  final String _message;
+
+  const UnknownFailure(this._message);
+
+  @override
+  String get message => _message;
+}
+
 class ConflictFailure extends Failure {
   final String _message;
 

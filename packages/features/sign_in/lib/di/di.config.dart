@@ -9,9 +9,9 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:auth_domain/auth.dart' as _i60;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
-import 'package:navigation/navigation.dart' as _i1058;
 
 import '../src/presentation/bloc/sign_in_bloc.dart' as _i338;
 
@@ -22,6 +22,8 @@ _i174.GetIt $initGetIt(
   _i526.EnvironmentFilter? environmentFilter,
 }) {
   final gh = _i526.GetItHelper(getIt, environment, environmentFilter);
-  gh.factory<_i338.SignInBloc>(() => _i338.SignInBloc());
+  gh.factory<_i338.SignInBloc>(
+    () => _i338.SignInBloc(gh<_i60.LoginWithEmailAndPasswordUsecase>()),
+  );
   return getIt;
 }

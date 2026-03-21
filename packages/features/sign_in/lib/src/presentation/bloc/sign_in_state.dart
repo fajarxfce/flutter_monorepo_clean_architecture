@@ -1,22 +1,15 @@
-part of 'sign_in_bloc.dart';
+import 'package:auth_domain/auth.dart';
+import 'package:shared/shared.dart';
 
-sealed class SignInState {
-  const SignInState();
+part 'sign_in_state.freezed.dart';
+
+enum SignInStatus { initial, loading, success, failure }
+
+@freezed
+abstract class SignInState with _$SignInState {
+  const factory SignInState({
+    @Default(SignInStatus.initial) SignInStatus status,
+    @Default('') String message,
+    Login? loginData,
+  }) = _SignInState;
 }
-
-final class SignInInitial extends SignInState {
-  const SignInInitial();
-}
-
-final class SignInLoading extends SignInState {
-  const SignInLoading();
-}
-
-final class SignInFailure extends SignInState {
-  final String message;
-  const SignInFailure(this.message);
-}
-
-// No SignInSuccess state — on success we navigate away (BLoC calls AppNavigator)
-// so there's nothing to show. If you need to emit something (e.g. for analytics),
-// you can add it here.

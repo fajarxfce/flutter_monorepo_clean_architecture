@@ -266,6 +266,18 @@
       "languageVersion": "3.5"
     },
     {
+      "name": "freezed",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/freezed-3.2.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.8"
+    },
+    {
+      "name": "freezed_annotation",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/freezed_annotation-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "frontend_server_client",
       "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/frontend_server_client-4.0.0",
       "packageUri": "lib/",
@@ -754,6 +766,30 @@
     {
       "name": "widgets",
       "rootUri": "../packages/core/widgets",
+      "packageUri": "lib/",
+      "languageVersion": "3.11"
+    },
+    {
+      "name": "auth_domain",
+      "rootUri": "../packages/domains/auth",
+      "packageUri": "lib/",
+      "languageVersion": "3.11"
+    },
+    {
+      "name": "product_domain",
+      "rootUri": "../packages/domains/product",
+      "packageUri": "lib/",
+      "languageVersion": "3.11"
+    },
+    {
+      "name": "auth_data",
+      "rootUri": "../packages/data/auth",
+      "packageUri": "lib/",
+      "languageVersion": "3.11"
+    },
+    {
+      "name": "product_data",
+      "rootUri": "../packages/data/product",
       "packageUri": "lib/",
       "languageVersion": "3.11"
     },

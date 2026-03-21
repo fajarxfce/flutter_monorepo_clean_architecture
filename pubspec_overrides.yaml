@@ -15,3 +15,6 @@ dependency_overrides:
   equatable: ^2.0.8
   formz: ^0.8.0
   dartz: ^0.10.1
+  flutter_bloc: ^9.1.1
+  freezed: ^3.2.5
+  freezed_annotation: ^3.1.0

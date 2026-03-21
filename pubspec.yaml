@@ -13,6 +13,10 @@ workspace:
   - app
   - packages/core/shared
   - packages/core/widgets
+  - packages/domains/auth
+  - packages/domains/product
+  - packages/data/auth
+  - packages/data/product
   - packages/navigation
   - packages/core/domain
   - packages/core/data

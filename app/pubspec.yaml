@@ -12,12 +12,22 @@ dependencies:
     sdk: flutter
 
   # local packages
+  network:
+    path: ../packages/core/network
   navigation:
     path: ../packages/navigation
   data:
     path: ../packages/core/data
   domain:
     path: ../packages/core/domain
+  auth_domain:
+    path: ../packages/domains/auth
+  product_domain:
+    path: ../packages/domains/product
+  auth_data:
+    path: ../packages/data/auth
+  product_data:
+    path: ../packages/data/product
   sign_in:
     path: ../packages/features/sign_in
   sign_up:
