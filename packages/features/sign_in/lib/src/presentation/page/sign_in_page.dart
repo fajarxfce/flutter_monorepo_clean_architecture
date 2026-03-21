@@ -7,24 +7,21 @@ import 'package:widgets/widgets.dart';
 import '../bloc/sign_in_bloc.dart';
 
 @RoutePage()
-class SignInPage extends StatefulWidget implements AutoRouteWrapper {
+class SignInPage extends BaseStatefulPage<SignInBloc, SignInState> {
   const SignInPage({super.key});
 
   @override
-  Widget wrappedRoute(BuildContext context) {
-    return BlocProvider(
-      create: (context) => GetIt.instance<SignInBloc>(),
-      child: this,
-    );
-  }
-
-  @override
-  State<SignInPage> createState() => _SignInPageState();
+  BaseStatefulPageState<SignInBloc, SignInState, SignInPage> createState() =>
+      _SignInPageState();
 }
 
-class _SignInPageState extends State<SignInPage> {
+class _SignInPageState
+    extends BaseStatefulPageState<SignInBloc, SignInState, SignInPage> {
   final _emailCtrl = TextEditingController();
   final _passwordCtrl = TextEditingController();
+
+  @override
+  SignInBloc createBloc() => GetIt.instance<SignInBloc>();
 
   @override
   void dispose() {
@@ -34,7 +31,7 @@ class _SignInPageState extends State<SignInPage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget buildBody(BuildContext context, SignInState state) {
     return BlocConsumer<SignInBloc, SignInState>(
       listener: (context, state) {},
       builder: (context, state) {
@@ -63,17 +60,21 @@ class _SignInPageState extends State<SignInPage> {
                   const SizedBox(height: 24),
 
                   // Sign In button — fires SignInSubmitted event
-                  DoButton(
-                    variant: DoButtonVariant.primary,
-                    onPressed: () {
-                      context.read<SignInBloc>().add(
-                        SignInSubmitted(
-                          email: _emailCtrl.text,
-                          password: _passwordCtrl.text,
-                        ),
-                      );
-                    },
-                    text: 'Sign In',
+                  SizedBox(
+                    width: double.infinity,
+                    child: DoButton(
+                      isLoading: isLoading,
+                      variant: DoButtonVariant.primary,
+                      onPressed: () {
+                        context.read<SignInBloc>().add(
+                          SignInSubmitted(
+                            email: _emailCtrl.text,
+                            password: _passwordCtrl.text,
+                          ),
+                        );
+                      },
+                      text: 'Sign In',
+                    ),
                   ),
                   const SizedBox(height: 12),
 

@@ -16,6 +16,7 @@ class SignInBloc extends BlocFx<SignInEvent, SignInState, SignInEffect> {
     SignInSubmitted event,
     Emitter<SignInState> emit,
   ) async {
+    emit(state.copyWith(status: SignInStatus.loading));
     final result = await _loginWithEmailAndPasswordUsecase(
       LoginRequest(email: event.email, password: event.password),
     );

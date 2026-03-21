@@ -90,7 +90,8 @@
       "name": "widgets",
       "version": "0.0.1",
       "dependencies": [
-        "flutter"
+        "flutter",
+        "shared"
       ],
       "devDependencies": [
         "flutter_lints",
