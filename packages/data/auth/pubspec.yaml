@@ -18,6 +18,8 @@ dependencies:
     path: ../../core/network
   auth_domain:
     path: ../../domains/auth
+  data:
+    path: ../../core/data
 
 dev_dependencies:
   build_runner:

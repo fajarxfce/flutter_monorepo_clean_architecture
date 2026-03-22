@@ -10,6 +10,8 @@ environment:
 resolution: workspace
 
 dependencies:
+  data:
+    path: ../packages/core/data
   flutter:
     sdk: flutter
   get_it: ^9.2.1
