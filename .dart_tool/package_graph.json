@@ -56,6 +56,7 @@
       "devDependencies": [
         "auto_route_generator",
         "build_runner",
+        "flutter_flavorizr",
         "flutter_lints",
         "flutter_test",
         "injectable_generator"
@@ -1013,6 +1014,24 @@
       ]
     },
     {
+      "name": "flutter_flavorizr",
+      "version": "2.4.2",
+      "dependencies": [
+        "archive",
+        "args",
+        "checked_yaml",
+        "collection",
+        "flutter",
+        "image",
+        "io",
+        "json_annotation",
+        "mason_logger",
+        "sprintf",
+        "xml",
+        "yaml"
+      ]
+    },
+    {
       "name": "yaml_edit",
       "version": "2.2.4",
       "dependencies": [
@@ -1341,6 +1360,37 @@
       ]
     },
     {
+      "name": "sprintf",
+      "version": "7.0.0",
+      "dependencies": []
+    },
+    {
+      "name": "mason_logger",
+      "version": "0.3.5",
+      "dependencies": [
+        "ffi",
+        "io",
+        "win32"
+      ]
+    },
+    {
+      "name": "image",
+      "version": "4.8.0",
+      "dependencies": [
+        "archive",
+        "meta",
+        "xml"
+      ]
+    },
+    {
+      "name": "archive",
+      "version": "4.0.9",
+      "dependencies": [
+        "path",
+        "posix"
+      ]
+    },
+    {
       "name": "petitparser",
       "version": "7.0.2",
       "dependencies": [
@@ -1445,9 +1495,25 @@
       ]
     },
     {
+      "name": "win32",
+      "version": "5.15.0",
+      "dependencies": [
+        "ffi"
+      ]
+    },
+    {
       "name": "ffi",
       "version": "2.2.0",
       "dependencies": []
+    },
+    {
+      "name": "posix",
+      "version": "6.5.0",
+      "dependencies": [
+        "ffi",
+        "meta",
+        "path"
+      ]
     },
     {
       "name": "xdg_directories",

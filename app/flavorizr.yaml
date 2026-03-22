@@ -1,0 +1,25 @@
+flavors:
+  dev:
+    app:
+      name: "Belajar Dev"
+    android:
+      applicationId: "com.fajar.app.dev"
+
+  prod:
+    app:
+      name: "Belajar"
+    android:
+      applicationId: "com.fajar.app"
+
+instructions:
+  - assets:download
+  - assets:extract
+  - android:androidManifest
+  - android:flavorizrGradle
+  - android:buildGradle
+  - flutter:flavors
+  - flutter:app
+  - flutter:pages
+  - flutter:main
+  - assets:clean
+  - ide:config
