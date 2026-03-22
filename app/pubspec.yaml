@@ -43,6 +43,10 @@ dependencies:
   get_it:
   splash:
     path: ../packages/features/splash
+  notifications:
+    path: ../packages/core/notifications
+  firebase_core: ^4.5.0
+  widgets: ^0.0.1
 
 dev_dependencies:
   build_runner:

@@ -11,6 +11,8 @@ import 'package:network/di/di.dart';
 import 'package:sign_in/di/di.dart';
 import 'package:splash/splash.dart';
 
+import 'package:notifications/notifications.dart';
+
 final getIt = GetIt.instance;
 
 @InjectableInit(
@@ -26,6 +28,7 @@ void configureDependencies() {
   configureAuthDomainDependencies(getIt);
   configureSignInDependencies(getIt);
   configureSplashDependencies(getIt);
+  configureNotificationDependencies(getIt);
 }
 
 @module

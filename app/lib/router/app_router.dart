@@ -33,5 +33,10 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: ProfileRoute.page, path: AppRoutes.profile),
       ],
     ),
+    AutoRoute(
+      page: DummyDetailRoute.page,
+      path: AppRoutes.detail,
+      guards: [authGuard],
+    ),
   ];
 }

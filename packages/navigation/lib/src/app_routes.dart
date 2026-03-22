@@ -8,4 +8,5 @@ abstract final class AppRoutes {
   static const history = 'history';
   static const inventory = 'inventory';
   static const profile = 'profile';
+  static const detail = '/detail/:id';
 }
