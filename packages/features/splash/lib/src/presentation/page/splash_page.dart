@@ -27,10 +27,10 @@ class _SplashPageState
       listener: (context, state) {
         state.maybeWhen(
           authenticated: () {
-            context.router.pushPath(AppRoutes.main);
+            context.router.replacePath(AppRoutes.main);
           },
           unauthenticated: () {
-            context.router.pushPath(AppRoutes.signIn);
+            context.router.replacePath(AppRoutes.signIn);
           },
           orElse: () {},
         );
