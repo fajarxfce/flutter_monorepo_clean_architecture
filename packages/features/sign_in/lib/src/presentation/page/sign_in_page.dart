@@ -72,9 +72,9 @@ class _SignInPageState
                           obscureText: true,
                           label: 'Password',
                         ),
-                        const SizedBox(height: 16),
+                        const SizedBox(height: 8),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             DoCheckbox(
                               value: _rememberMe,

@@ -23,6 +23,8 @@ class DoCheckbox extends StatelessWidget {
       value: value,
       onChanged: onChanged,
       activeColor: theme.colorScheme.primary,
+      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      visualDensity: VisualDensity.compact,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
     );
 
@@ -37,6 +39,7 @@ class DoCheckbox extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           checkbox,
+          const SizedBox(width: 8),
           if (labelWidget != null)
             labelWidget!
           else if (label != null)
