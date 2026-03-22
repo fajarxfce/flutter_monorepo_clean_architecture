@@ -12,6 +12,7 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
+  font_awesome_flutter: ^11.0.0
   shared:
     path: ../../core/shared
   widgets:

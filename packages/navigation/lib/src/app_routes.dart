@@ -5,5 +5,7 @@ abstract final class AppRoutes {
   static String signUpPath(String halo) => '/sign-up/$halo';
   static const main = '/main';
   static const home = 'home';
+  static const history = 'history';
+  static const inventory = 'inventory';
   static const profile = 'profile';
 }

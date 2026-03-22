@@ -12,18 +12,41 @@ class MainPage extends StatelessWidget {
     final isDark = theme.brightness == Brightness.dark;
 
     return AutoTabsScaffold(
+      extendBody: true,
       floatingActionButtonBuilder: (context, tabsRouter) {
-        return FloatingActionButton(
-          onPressed: () {
-            // Handle FAB action
-          },
-          backgroundColor: DOColors.primaryBlue,
-          foregroundColor: Colors.white,
-          elevation: 4,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(28),
+        return Container(
+          height: 60,
+          width: 60,
+          margin: const EdgeInsets.only(top: 24),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: const LinearGradient(
+              colors: [Color(0xFF3B82F6), Color(0xFF2563EB)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: const Color(0xFF2563EB).withValues(alpha: 0.4),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
+              ),
+            ],
           ),
-          child: const Icon(Icons.add),
+          child: FloatingActionButton(
+            heroTag: 'main_fab',
+            onPressed: () {
+              // POS / Scan Action
+            },
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            highlightElevation: 0,
+            child: const Icon(
+              Icons.qr_code_scanner_rounded, // Better icon for POS
+              color: Colors.white,
+              size: 26,
+            ),
+          ),
         );
       },
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -48,24 +71,42 @@ class MainPage extends StatelessWidget {
           child: BottomAppBar(
             elevation: 0,
             color: Colors.transparent,
+            padding: EdgeInsets.zero,
             notchMargin: 8,
+            shape: const CircularNotchedRectangle(),
             child: SizedBox(
-              height: 60,
+              height: 65, // Tinggi pas buat navbar lebar bawah (standar)
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   _NavBarItem(
-                    icon: Icons.home_rounded,
-                    label: 'Home',
+                    icon: Icons.dashboard_outlined,
+                    activeIcon: Icons.dashboard_rounded,
+                    label: 'Beranda',
                     isSelected: tabsRouter.activeIndex == 0,
                     onTap: () => tabsRouter.setActiveIndex(0),
                   ),
-                  const SizedBox(width: 48), // Space for FAB
                   _NavBarItem(
-                    icon: Icons.person_rounded,
-                    label: 'Profile',
+                    icon: Icons.receipt_long_outlined,
+                    activeIcon: Icons.receipt_long_rounded,
+                    label: 'Riwayat',
                     isSelected: tabsRouter.activeIndex == 1,
                     onTap: () => tabsRouter.setActiveIndex(1),
+                  ),
+                  const SizedBox(width: 48), // Padding buat FAB tengah
+                  _NavBarItem(
+                    icon: Icons.inventory_2_outlined,
+                    activeIcon: Icons.inventory_2_rounded,
+                    label: 'Produk',
+                    isSelected: tabsRouter.activeIndex == 2,
+                    onTap: () => tabsRouter.setActiveIndex(2),
+                  ),
+                  _NavBarItem(
+                    icon: Icons.person_outline_rounded,
+                    activeIcon: Icons.person_rounded,
+                    label: 'Profil',
+                    isSelected: tabsRouter.activeIndex == 3,
+                    onTap: () => tabsRouter.setActiveIndex(3),
                   ),
                 ],
               ),
@@ -79,12 +120,14 @@ class MainPage extends StatelessWidget {
 
 class _NavBarItem extends StatelessWidget {
   final IconData icon;
+  final IconData activeIcon;
   final String label;
   final bool isSelected;
   final VoidCallback onTap;
 
   const _NavBarItem({
     required this.icon,
+    required this.activeIcon,
     required this.label,
     required this.isSelected,
     required this.onTap,
@@ -101,22 +144,41 @@ class _NavBarItem extends StatelessWidget {
 
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(12),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      child: Container(
+        color: Colors.transparent, // Nggak ada kotak birunya, ngelebar penuh
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 6.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, color: color, size: 24),
+            AnimatedSwitcher(
+              duration: const Duration(milliseconds: 250),
+              transitionBuilder: (child, animation) => FadeTransition(
+                opacity: animation,
+                child: ScaleTransition(
+                  scale: animation,
+                  child: child,
+                ),
+              ),
+              child: Icon(
+                isSelected ? activeIcon : icon,
+                key: ValueKey<bool>(isSelected),
+                color: color,
+                size: 24,
+              ),
+            ),
             const SizedBox(height: 4),
-            Text(
-              label,
+            AnimatedDefaultTextStyle(
+              duration: const Duration(milliseconds: 200),
               style: TextStyle(
-                fontSize: 12,
+                fontSize: 11,
                 fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
                 color: color,
+                fontFamily: theme.textTheme.bodyMedium?.fontFamily,
               ),
+              child: Text(label),
             ),
           ],
         ),

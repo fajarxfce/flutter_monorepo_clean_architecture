@@ -9,21 +9,55 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i2;
-import 'package:main/src/presentation/page/main_page.dart' as _i1;
+import 'package:auto_route/auto_route.dart' as _i4;
+import 'package:main/src/presentation/page/dummy_history_page.dart' as _i1;
+import 'package:main/src/presentation/page/dummy_inventory_page.dart' as _i2;
+import 'package:main/src/presentation/page/main_page.dart' as _i3;
 
 /// generated route for
-/// [_i1.MainPage]
-class MainRoute extends _i2.PageRouteInfo<void> {
-  const MainRoute({List<_i2.PageRouteInfo>? children})
+/// [_i1.DummyHistoryPage]
+class DummyHistoryRoute extends _i4.PageRouteInfo<void> {
+  const DummyHistoryRoute({List<_i4.PageRouteInfo>? children})
+    : super(DummyHistoryRoute.name, initialChildren: children);
+
+  static const String name = 'DummyHistoryRoute';
+
+  static _i4.PageInfo page = _i4.PageInfo(
+    name,
+    builder: (data) {
+      return const _i1.DummyHistoryPage();
+    },
+  );
+}
+
+/// generated route for
+/// [_i2.DummyInventoryPage]
+class DummyInventoryRoute extends _i4.PageRouteInfo<void> {
+  const DummyInventoryRoute({List<_i4.PageRouteInfo>? children})
+    : super(DummyInventoryRoute.name, initialChildren: children);
+
+  static const String name = 'DummyInventoryRoute';
+
+  static _i4.PageInfo page = _i4.PageInfo(
+    name,
+    builder: (data) {
+      return const _i2.DummyInventoryPage();
+    },
+  );
+}
+
+/// generated route for
+/// [_i3.MainPage]
+class MainRoute extends _i4.PageRouteInfo<void> {
+  const MainRoute({List<_i4.PageRouteInfo>? children})
     : super(MainRoute.name, initialChildren: children);
 
   static const String name = 'MainRoute';
 
-  static _i2.PageInfo page = _i2.PageInfo(
+  static _i4.PageInfo page = _i4.PageInfo(
     name,
     builder: (data) {
-      return const _i1.MainPage();
+      return const _i3.MainPage();
     },
   );
 }

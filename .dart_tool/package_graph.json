@@ -297,6 +297,7 @@
       "version": "0.0.1",
       "dependencies": [
         "flutter",
+        "font_awesome_flutter",
         "shared",
         "widgets"
       ],
@@ -1037,6 +1038,13 @@
         "stream_channel",
         "test_api",
         "vector_math"
+      ]
+    },
+    {
+      "name": "font_awesome_flutter",
+      "version": "11.0.0",
+      "dependencies": [
+        "flutter"
       ]
     },
     {
