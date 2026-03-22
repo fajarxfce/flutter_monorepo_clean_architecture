@@ -5,6 +5,8 @@ export 'src/theme/do_theme.dart';
 // Atoms
 export 'src/atoms/do_button.dart';
 export 'src/atoms/do_text.dart';
+export 'src/atoms/do_checkbox.dart';
+export 'src/atoms/do_radio.dart';
 
 // Molecules
 export 'src/molecules/do_text_field.dart';

@@ -17,9 +17,9 @@ class F {
   static String get baseUrl {
     switch (appFlavor) {
       case Flavor.dev:
-        return 'http://192.168.1.39:3000';
+        return 'https://pos.karuhundeveloper.com/api';
       case Flavor.prod:
-        return 'https://api.domain-produksi.com';
+        return 'https://pos.karuhundeveloper.com/api';
     }
   }
 }

@@ -4,10 +4,10 @@ part 'login_dto.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake)
 class LoginDTO {
-  final String? accessToken;
-  final String? refreshToken;
+  final String? token;
+  final String? tokenType;
 
-  LoginDTO({this.accessToken, this.refreshToken});
+  LoginDTO({this.token, this.tokenType});
 
   factory LoginDTO.fromJson(Map<String, dynamic> json) =>
       _$LoginDTOFromJson(json);

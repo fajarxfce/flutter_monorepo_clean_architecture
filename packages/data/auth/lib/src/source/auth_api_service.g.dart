@@ -20,26 +20,31 @@ class _AuthApiService implements AuthApiService {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<LoginDTO> loginWithEmailAndPassword(Map<String, dynamic> body) async {
+  Future<BaseResponse<LoginDTO>> loginWithEmailAndPassword(
+    Map<String, dynamic> body,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body);
-    final _options = _setStreamType<LoginDTO>(
+    final _options = _setStreamType<BaseResponse<LoginDTO>>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/auth/login',
+            '/v1/login',
             queryParameters: queryParameters,
             data: _data,
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late LoginDTO _value;
+    late BaseResponse<LoginDTO> _value;
     try {
-      _value = LoginDTO.fromJson(_result.data!);
+      _value = BaseResponse<LoginDTO>.fromJson(
+        _result.data!,
+        (json) => LoginDTO.fromJson(json as Map<String, dynamic>),
+      );
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options, response: _result);
       rethrow;
