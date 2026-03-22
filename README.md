@@ -86,6 +86,29 @@ _Assuming Xcode configuration is complete._
 flutter build ipa --release --flavor prod -t lib/main.dart
 ```
 
+## Setup & Delivery via Shorebird (OTA Updates)
+
+This project integrates [Shorebird](https://shorebird.dev) to provide Over-The-Air (OTA) updates directly to user devices without requiring store reviews. It seamlessly supports the flavor-based architecture.
+
+Ensure you are always inside the `app` directory when executing Shorebird commands. 
+
+### Creating a Release
+To create an initial base release that includes the Shorebird embedder:
+
+```bash
+# Create Prod release (Android Bundle)
+shorebird release android --flavor prod -t lib/main.dart
+```
+*Note: This command will ask if you want to upload the generated artifact. You must deploy this artifact to Google Play (or your target distribution platform).*
+
+### Creating a Patch (OTA Update)
+When making logic or UI modifications that do not involve native dependency changes, you can push a patch directly to live users:
+
+```bash
+shorebird patch android --flavor prod -t lib/main.dart
+```
+*Users will receive the latest dart code over-the-air upon their next app restart.*
+
 ## Adding or Modifying Configurations
 
 1. **Changing Text/App IDs**: Edit `app/flavorizr.yaml` and regenerate using `dart run flutter_flavorizr`.
