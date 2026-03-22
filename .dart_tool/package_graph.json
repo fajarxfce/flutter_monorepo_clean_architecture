@@ -223,6 +223,7 @@
       "version": "0.0.1",
       "dependencies": [
         "flutter",
+        "get_it",
         "shared"
       ],
       "devDependencies": [

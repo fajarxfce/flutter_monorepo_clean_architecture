@@ -24,6 +24,7 @@ _i174.GetIt $initGetIt(
   final gh = _i526.GetItHelper(getIt, environment, environmentFilter);
   final appModule = _$AppModule();
   gh.singleton<_i81.AppRouter>(() => appModule.appRouter);
+  gh.factory<String>(() => appModule.baseUrl, instanceName: 'BaseUrl');
   return getIt;
 }
 

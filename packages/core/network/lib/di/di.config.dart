@@ -26,7 +26,10 @@ _i174.GetIt init(
   final networkModule = _$NetworkModule();
   gh.singleton<_i285.AuthInterceptor>(() => _i285.AuthInterceptor());
   gh.lazySingleton<_i811.Dio>(
-    () => networkModule.dio(gh<_i285.AuthInterceptor>()),
+    () => networkModule.dio(
+      gh<_i285.AuthInterceptor>(),
+      gh<String>(instanceName: 'BaseUrl'),
+    ),
   );
   return getIt;
 }

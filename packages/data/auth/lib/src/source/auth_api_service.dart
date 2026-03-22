@@ -1,5 +1,4 @@
 import 'package:auth_data/src/source/response/login_dto.dart';
-import 'package:auth_domain/auth.dart';
 import 'package:shared/shared.dart';
 
 part 'auth_api_service.g.dart';

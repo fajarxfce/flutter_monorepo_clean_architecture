@@ -1,7 +1,4 @@
-enum Flavor {
-  dev,
-  prod,
-}
+enum Flavor { dev, prod }
 
 class F {
   static late final Flavor appFlavor;
@@ -17,4 +14,12 @@ class F {
     }
   }
 
+  static String get baseUrl {
+    switch (appFlavor) {
+      case Flavor.dev:
+        return 'http://192.168.1.39:3000';
+      case Flavor.prod:
+        return 'https://api.domain-produksi.com';
+    }
+  }
 }

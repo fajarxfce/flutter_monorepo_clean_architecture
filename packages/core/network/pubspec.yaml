@@ -12,6 +12,7 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
+  get_it: ^9.2.1
   shared:
     path: ../shared
 

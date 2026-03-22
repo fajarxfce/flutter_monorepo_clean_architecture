@@ -2,6 +2,7 @@ import 'package:app/di/di.config.dart';
 import 'package:app/router/app_router.dart';
 import 'package:auth_data/auth.dart';
 import 'package:auth_domain/auth.dart';
+import 'package:app/flavors.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:network/di/di.dart';
@@ -26,4 +27,7 @@ void configureDependencies() {
 abstract class AppModule {
   @singleton
   AppRouter get appRouter;
+
+  @Named('BaseUrl')
+  String get baseUrl => F.baseUrl;
 }
