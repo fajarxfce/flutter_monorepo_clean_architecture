@@ -18,6 +18,7 @@ dependencies:
     path: ../../core/widgets
   data:
     path: ../../core/data
+  lottie: ^3.3.2
 
 dev_dependencies:
   build_runner:
@@ -34,7 +35,8 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
+  assets:
+    - assets/lottie/splash_loading.json
   # To add assets to your package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

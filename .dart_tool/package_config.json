@@ -464,6 +464,12 @@
       "languageVersion": "3.4"
     },
     {
+      "name": "lottie",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/lottie-3.3.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.9"
+    },
+    {
       "name": "mason_logger",
       "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/mason_logger-0.3.5",
       "packageUri": "lib/",

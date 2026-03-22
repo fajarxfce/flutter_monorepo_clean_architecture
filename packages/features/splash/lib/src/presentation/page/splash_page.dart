@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shared/shared.dart';
 import 'package:widgets/widgets.dart';
 
@@ -35,7 +36,16 @@ class _SplashPageState
           orElse: () {},
         );
       },
-      child: const Scaffold(body: Center(child: CircularProgressIndicator())),
+      child: Scaffold(
+        body: Center(
+          child: Lottie.asset(
+            'assets/lottie/splash_loading.json',
+            package: 'splash',
+            width: double.infinity,
+            height: double.infinity,
+          ),
+        ),
+      ),
     );
   }
 }
