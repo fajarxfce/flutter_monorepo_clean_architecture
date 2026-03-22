@@ -18,6 +18,7 @@
     "shared",
     "sign_in",
     "sign_up",
+    "splash",
     "widgets"
   ],
   "packages": [
@@ -51,7 +52,8 @@
         "product_domain",
         "profile",
         "sign_in",
-        "sign_up"
+        "sign_up",
+        "splash"
       ],
       "devDependencies": [
         "auto_route_generator",
@@ -201,6 +203,24 @@
       ]
     },
     {
+      "name": "splash",
+      "version": "0.0.1",
+      "dependencies": [
+        "data",
+        "flutter",
+        "shared",
+        "widgets"
+      ],
+      "devDependencies": [
+        "auto_route_generator",
+        "build_runner",
+        "flutter_lints",
+        "flutter_test",
+        "freezed",
+        "injectable_generator"
+      ]
+    },
+    {
       "name": "database",
       "version": "0.0.1",
       "dependencies": [
@@ -228,7 +248,6 @@
       "dependencies": [
         "data",
         "flutter",
-        "get_it",
         "shared"
       ],
       "devDependencies": [

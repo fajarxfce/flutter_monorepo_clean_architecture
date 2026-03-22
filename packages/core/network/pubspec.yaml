@@ -11,10 +11,9 @@ resolution: workspace
 
 dependencies:
   data:
-    path: ../packages/core/data
+    path: ../data
   flutter:
     sdk: flutter
-  get_it: ^9.2.1
   shared:
     path: ../shared
 

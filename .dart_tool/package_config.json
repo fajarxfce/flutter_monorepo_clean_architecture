@@ -932,6 +932,12 @@
       "languageVersion": "3.10"
     },
     {
+      "name": "splash",
+      "rootUri": "../packages/features/splash",
+      "packageUri": "lib/",
+      "languageVersion": "3.11"
+    },
+    {
       "name": "database",
       "rootUri": "../packages/core/database",
       "packageUri": "lib/",

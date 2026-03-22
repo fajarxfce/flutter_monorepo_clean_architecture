@@ -9,27 +9,21 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:data/data.dart' as _i437;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
-import '../router/app_router.dart' as _i81;
-import '../router/auth_guard.dart' as _i313;
-import 'di.dart' as _i913;
+import '../src/presentation/bloc/splash_bloc.dart' as _i1050;
 
 // initializes the registration of main-scope dependencies inside of GetIt
-_i174.GetIt $initGetIt(
+_i174.GetIt init(
   _i174.GetIt getIt, {
   String? environment,
   _i526.EnvironmentFilter? environmentFilter,
 }) {
   final gh = _i526.GetItHelper(getIt, environment, environmentFilter);
-  final appModule = _$AppModule();
-  gh.singleton<_i313.AuthGuard>(() => appModule.authGuard);
-  gh.factory<String>(() => appModule.baseUrl, instanceName: 'BaseUrl');
-  gh.singleton<_i81.AppRouter>(
-    () => appModule.appRouter(gh<_i313.AuthGuard>()),
+  gh.factory<_i1050.SplashBloc>(
+    () => _i1050.SplashBloc(gh<_i437.AuthTokenLocalDataSource>()),
   );
   return getIt;
 }
-
-class _$AppModule extends _i913.AppModule {}
