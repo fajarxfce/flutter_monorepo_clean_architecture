@@ -19,6 +19,7 @@
     "sign_in",
     "sign_up",
     "splash",
+    "syncronizer",
     "widgets"
   ],
   "packages": [
@@ -65,6 +66,17 @@
         "flutter_lints",
         "flutter_test",
         "injectable_generator"
+      ]
+    },
+    {
+      "name": "syncronizer",
+      "version": "0.0.1",
+      "dependencies": [
+        "flutter"
+      ],
+      "devDependencies": [
+        "flutter_lints",
+        "flutter_test"
       ]
     },
     {

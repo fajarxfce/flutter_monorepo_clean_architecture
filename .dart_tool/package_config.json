@@ -980,6 +980,12 @@
       "languageVersion": "3.10"
     },
     {
+      "name": "syncronizer",
+      "rootUri": "../packages/core/syncronizer",
+      "packageUri": "lib/",
+      "languageVersion": "3.11"
+    },
+    {
       "name": "shared",
       "rootUri": "../packages/core/shared",
       "packageUri": "lib/",
