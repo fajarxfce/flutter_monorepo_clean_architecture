@@ -51,20 +51,22 @@ class MainPage extends StatelessWidget {
       },
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBuilder: (context, tabsRouter) {
-        return Container(
+        return SafeArea(
+          child: Container(
+            margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+            clipBehavior: Clip.antiAlias,
           decoration: BoxDecoration(
             color: isDark ? DOColors.darkSurface : DOColors.lightSurface,
-            border: Border(
-              top: BorderSide(
-                color: isDark ? DOColors.borderDark : DOColors.borderLight,
-                width: 1,
-              ),
+            borderRadius: BorderRadius.circular(24),
+            border: Border.all(
+              color: isDark ? DOColors.borderDark : DOColors.borderLight,
+              width: 1,
             ),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.05),
                 blurRadius: 10,
-                offset: const Offset(0, -4),
+                offset: const Offset(0, 4),
               ),
             ],
           ),
@@ -75,7 +77,7 @@ class MainPage extends StatelessWidget {
             notchMargin: 8,
             shape: const CircularNotchedRectangle(),
             child: SizedBox(
-              height: 65, // Tinggi pas buat navbar lebar bawah (standar)
+              height: 54, // Dibuat lebih pendek agar pas dengan konten
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -112,6 +114,7 @@ class MainPage extends StatelessWidget {
               ),
             ),
           ),
+        ),
         );
       },
     );
@@ -148,7 +151,7 @@ class _NavBarItem extends StatelessWidget {
       highlightColor: Colors.transparent,
       child: Container(
         color: Colors.transparent, // Nggak ada kotak birunya, ngelebar penuh
-        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 6.0),
+        padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 2.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -157,10 +160,7 @@ class _NavBarItem extends StatelessWidget {
               duration: const Duration(milliseconds: 250),
               transitionBuilder: (child, animation) => FadeTransition(
                 opacity: animation,
-                child: ScaleTransition(
-                  scale: animation,
-                  child: child,
-                ),
+                child: ScaleTransition(scale: animation, child: child),
               ),
               child: Icon(
                 isSelected ? activeIcon : icon,
