@@ -8,6 +8,12 @@ dev_dependencies:
   melos: ^7.4.0
   flutter_bloc: ^9.1.0
   equatable: ^2.0.7
+  build_runner:
+  auto_route_generator:
+  injectable_generator:
+  freezed:
+  json_serializable:
+  retrofit_generator:
 
 workspace:
   - app
@@ -25,6 +31,7 @@ workspace:
   - packages/core/database
   - packages/core/model
   - packages/core/network
+  - packages/core/notifications
   - packages/features/sign_up
   - packages/features/sign_in
   - packages/features/main
@@ -42,20 +49,15 @@ melos:
       description: Bootstrap with custom concurrent script
 
     build:
-      run: dart run build_runner build --delete-conflicting-outputs
-      exec:
-        concurrency: 7
-        failFast: false
-      description: Run build_runner build in all packages (max 3 concurrent)
-      packageFilters:
-        dependsOn: "build_runner"
+      run: dart run build_runner build --delete-conflicting-outputs --workspace
+      description: Run build_runner build once at the workspace root for all packages
 
     build_custom:
       run: dart tool/build.dart
       description: Build with custom concurrent script
 
     build_watch:
-      run: dart run build_runner watch --delete-conflicting-outputs
+      run: dart run build_runner watch --delete-conflicting-outputs --workspace
       exec:
         concurrency: 1
       description: Run build_runner watch

@@ -1,11 +1,12 @@
 name: notifications
 description: "A new Flutter package project."
-version: 0.0.1
+publish_to: "none"
 homepage:
 
 environment:
   sdk: ^3.11.3
   flutter: ">=1.17.0"
+resolution: workspace
 
 dependencies:
   firebase_core: ^4.5.0
@@ -21,8 +22,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
-  build_runner: ^2.13.1
-  injectable_generator: ^2.12.1
+  build_runner:
+  injectable_generator:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

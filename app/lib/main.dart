@@ -25,7 +25,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  configureDependencies();
+  await configureDependencies();
 
   final notificationService = GetIt.I<NotificationService>();
   await notificationService.initialize();

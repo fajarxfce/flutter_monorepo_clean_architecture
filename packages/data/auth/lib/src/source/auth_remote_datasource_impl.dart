@@ -12,9 +12,10 @@ class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
 
   @override
   Future<LoginDTO> loginWithEmailAndPassword(LoginRequest request) async {
-    final response = await _authApiService.loginWithEmailAndPassword(
-      request.toJson(),
-    );
+    final response = await _authApiService.loginWithEmailAndPassword({
+      'email': request.email,
+      'password': request.password,
+    });
     return response.data!;
   }
 }

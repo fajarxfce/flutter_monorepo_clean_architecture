@@ -74,7 +74,7 @@ packages:
     source: hosted
     version: "11.1.0"
   auto_route_generator:
-    dependency: "direct overridden"
+    dependency: "direct dev"
     description:
       name: auto_route_generator
       sha256: "04300eaf5821962aae8b5cd94f67013fd2fd326dc3be212d3ec1ae7470f09834"
@@ -130,7 +130,7 @@ packages:
     source: hosted
     version: "4.1.1"
   build_runner:
-    dependency: "direct overridden"
+    dependency: "direct dev"
     description:
       name: build_runner
       sha256: "39ad4ca8a2876779737c60e4228b4bcd35d4352ef7e14e47514093edc012c734"
@@ -521,7 +521,7 @@ packages:
     source: hosted
     version: "0.8.0"
   freezed:
-    dependency: "direct overridden"
+    dependency: "direct dev"
     description:
       name: freezed
       sha256: f23ea33b3863f119b58ed1b586e881a46bd28715ddcc4dbc33104524e3434131
@@ -633,7 +633,7 @@ packages:
     source: hosted
     version: "2.7.1+4"
   injectable_generator:
-    dependency: "direct overridden"
+    dependency: "direct dev"
     description:
       name: injectable_generator
       sha256: "5168f8189e8a3a5ec6cbaeb5249e99f53d51b6594f9abbc3e482f95ae1d96bfb"
@@ -657,7 +657,7 @@ packages:
     source: hosted
     version: "4.11.0"
   json_serializable:
-    dependency: "direct overridden"
+    dependency: "direct dev"
     description:
       name: json_serializable
       sha256: "44729f5c45748e6748f6b9a57ab8f7e4336edc8ae41fc295070e3814e616a6c0"
@@ -792,13 +792,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
-  notifications:
-    dependency: transitive
-    description:
-      path: "packages/core/notifications"
-      relative: true
-    source: path
-    version: "0.0.1"
   objective_c:
     dependency: transitive
     description:
@@ -984,7 +977,7 @@ packages:
     source: hosted
     version: "4.9.2"
   retrofit_generator:
-    dependency: "direct overridden"
+    dependency: "direct dev"
     description:
       name: retrofit_generator
       sha256: "2381d86c7291b55bf1d3b30d12054a74c417ba97321afbd73cb25be0e6fa401f"

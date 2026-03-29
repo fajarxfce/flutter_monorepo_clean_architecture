@@ -3,8 +3,6 @@ import 'package:network/network.dart';
 import 'package:shared/dartz.dart';
 import 'package:shared/shared.dart';
 
-part 'login_with_email_and_password_usecase.g.dart';
-
 @singleton
 class LoginWithEmailAndPasswordUsecase {
   final AuthRepository _authRepository;
@@ -15,14 +13,11 @@ class LoginWithEmailAndPasswordUsecase {
   }
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+/// Plain domain model — no JSON annotations, no framework dependencies.
+/// Serialization is the data layer's responsibility.
 class LoginRequest {
   final String email;
   final String password;
 
-  LoginRequest({required this.email, required this.password});
-
-  factory LoginRequest.fromJson(Map<String, dynamic> json) =>
-      _$LoginRequestFromJson(json);
-  Map<String, dynamic> toJson() => _$LoginRequestToJson(this);
+  const LoginRequest({required this.email, required this.password});
 }

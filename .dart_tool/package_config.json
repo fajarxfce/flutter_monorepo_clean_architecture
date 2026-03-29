@@ -602,12 +602,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "notifications",
-      "rootUri": "../packages/core/notifications",
-      "packageUri": "lib/",
-      "languageVersion": "3.11"
-    },
-    {
       "name": "objective_c",
       "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/objective_c-9.3.0",
       "packageUri": "lib/",
@@ -1060,6 +1054,12 @@
     {
       "name": "network",
       "rootUri": "../packages/core/network",
+      "packageUri": "lib/",
+      "languageVersion": "3.11"
+    },
+    {
+      "name": "notifications",
+      "rootUri": "../packages/core/notifications",
       "packageUri": "lib/",
       "languageVersion": "3.11"
     },

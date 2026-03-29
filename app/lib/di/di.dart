@@ -4,14 +4,16 @@ import 'package:app/router/auth_guard.dart';
 import 'package:auth_data/auth.dart';
 import 'package:data/data.dart';
 import 'package:auth_domain/auth.dart';
-import 'package:app/flavors.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-import 'package:network/di/di.dart';
-import 'package:sign_in/di/di.dart';
-import 'package:splash/splash.dart';
-
-import 'package:notifications/notifications.dart';
+import 'package:app/flavors.dart';
+import 'package:data/di/di.module.dart';
+import 'package:network/di/di.module.dart';
+import 'package:notifications/src/di/di.module.dart';
+import 'package:auth_data/src/di/di.module.dart';
+import 'package:auth_domain/src/di/di.module.dart';
+import 'package:sign_in/di/di.module.dart';
+import 'package:splash/di/di.module.dart';
 
 final getIt = GetIt.instance;
 
@@ -19,16 +21,20 @@ final getIt = GetIt.instance;
   initializerName: r'$initGetIt',
   preferRelativeImports: true,
   asExtension: false,
+  externalPackageModulesBefore: [
+    ExternalModule(DataPackageModule),
+    ExternalModule(NotificationsPackageModule),
+    ExternalModule(SplashPackageModule),
+  ],
+  externalPackageModulesAfter: [
+    ExternalModule(NetworkPackageModule),
+    ExternalModule(AuthDataPackageModule),
+    ExternalModule(AuthDomainPackageModule),
+    ExternalModule(SignInPackageModule),
+  ],
 )
-void configureDependencies() {
-  configureDataModule(getIt);
-  $initGetIt(getIt);
-  configureNetworkModule(getIt);
-  configureAuthDataDependencies(getIt);
-  configureAuthDomainDependencies(getIt);
-  configureSignInDependencies(getIt);
-  configureSplashDependencies(getIt);
-  configureNotificationDependencies(getIt);
+Future<void> configureDependencies() async {
+  await $initGetIt(getIt);
 }
 
 @module
