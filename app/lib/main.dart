@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:app/router/app_router.dart';
 import 'package:app/di/di.dart';
@@ -21,19 +23,24 @@ void main() async {
     orElse: () => Flavor.dev,
   );
 
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  if (!Platform.isLinux) {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  }
 
   await configureDependencies();
 
-  final notificationService = GetIt.I<NotificationService>();
-  await notificationService.initialize();
-  debugPrint('token: ${await notificationService.getToken()}');
-
   final appRouter = GetIt.I<AppRouter>();
-  final notificationHandler = NotificationHandler(appRouter);
-  notificationHandler.listen();
+
+  if (!Platform.isLinux) {
+    final notificationService = GetIt.I<NotificationService>();
+    await notificationService.initialize();
+    debugPrint('token: ${await notificationService.getToken()}');
+
+    final notificationHandler = NotificationHandler(appRouter);
+    notificationHandler.listen();
+  }
 
   runApp(const MainApp());
 }
