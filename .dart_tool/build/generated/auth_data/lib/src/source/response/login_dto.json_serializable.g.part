@@ -1,0 +1,13 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+LoginDTO _$LoginDTOFromJson(Map<String, dynamic> json) => LoginDTO(
+  token: json['token'] as String?,
+  tokenType: json['token_type'] as String?,
+);
+
+Map<String, dynamic> _$LoginDTOToJson(LoginDTO instance) => <String, dynamic>{
+  'token': instance.token,
+  'token_type': instance.tokenType,
+};

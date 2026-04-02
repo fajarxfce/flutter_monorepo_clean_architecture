@@ -1,0 +1,1 @@
+{"routes":[{"name":null,"pathParams":[],"pageType":{"import":"package:sign_in/src/presentation/page/sign_in_page.dart","name":"SignInPage","isNullable":false,"isRecordType":false},"className":"SignInPage","parameters":[],"hasWrappedRoute":false,"hasConstConstructor":true,"deferredLoading":null}],"inputPath":"lib/src/presentation/page/sign_in_page.dart","inputHash":0}
