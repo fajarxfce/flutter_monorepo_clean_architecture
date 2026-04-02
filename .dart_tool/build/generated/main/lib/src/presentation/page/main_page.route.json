@@ -1,1 +1,0 @@
-{"routes":[{"name":null,"pathParams":[],"pageType":{"import":"package:main/src/presentation/page/main_page.dart","name":"MainPage","isNullable":false,"isRecordType":false},"className":"MainPage","parameters":[],"hasWrappedRoute":false,"hasConstConstructor":true,"deferredLoading":null}],"inputPath":"lib/src/presentation/page/main_page.dart","inputHash":0}

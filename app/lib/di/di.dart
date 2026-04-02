@@ -1,9 +1,7 @@
 import 'package:app/di/di.config.dart';
 import 'package:app/router/app_router.dart';
 import 'package:app/router/auth_guard.dart';
-import 'package:auth_data/auth.dart';
 import 'package:data/data.dart';
-import 'package:auth_domain/auth.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:app/flavors.dart';

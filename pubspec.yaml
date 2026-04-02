@@ -110,22 +110,31 @@ melos:
       packageFilters:
         dirExists: "test"
 
-    # Clean build artifacts
+    # Clean flutter build artifacts (hanya flutter packages)
     clean:
       run: flutter clean
       exec:
-        concurrency: 7
-      description: Clean all packages
+        concurrency: 1
+      description: Clean flutter build artifacts in all packages
+      packageFilters:
+        flutter: true
 
-    # Deep clean (termasuk pub cache)
+    # Deep clean per-package .dart_tool (tanpa pubspec.lock - itu ada di root)
     clean_deep:
       run: |
         flutter clean
         rm -rf .dart_tool
-        rm -rf pubspec.lock
       exec:
         concurrency: 1
-      description: Deep clean including .dart_tool and pubspec.lock
+      description: Deep clean including per-package .dart_tool
+
+    # Full workspace nuke - clean semua + hapus root artifacts
+    nuke:
+      run: |
+        melos run clean
+        rm -rf .dart_tool
+        rm -rf pubspec.lock
+      description: Full workspace nuke (clean all packages + root .dart_tool & pubspec.lock)
 
     # Get dependencies di semua packages
     get:

@@ -13,12 +13,15 @@
 <module fileurl="file://$PROJECT_DIR$/packages/core/model/melos_model.iml" filepath="$PROJECT_DIR$/packages/core/model/melos_model.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/navigation/melos_navigation.iml" filepath="$PROJECT_DIR$/packages/navigation/melos_navigation.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/core/network/melos_network.iml" filepath="$PROJECT_DIR$/packages/core/network/melos_network.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/core/notifications/melos_notifications.iml" filepath="$PROJECT_DIR$/packages/core/notifications/melos_notifications.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/data/product/melos_product_data.iml" filepath="$PROJECT_DIR$/packages/data/product/melos_product_data.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/domains/product/melos_product_domain.iml" filepath="$PROJECT_DIR$/packages/domains/product/melos_product_domain.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/features/main/profile/melos_profile.iml" filepath="$PROJECT_DIR$/packages/features/main/profile/melos_profile.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/core/shared/melos_shared.iml" filepath="$PROJECT_DIR$/packages/core/shared/melos_shared.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/features/sign_in/melos_sign_in.iml" filepath="$PROJECT_DIR$/packages/features/sign_in/melos_sign_in.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/features/sign_up/melos_sign_up.iml" filepath="$PROJECT_DIR$/packages/features/sign_up/melos_sign_up.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/features/splash/melos_splash.iml" filepath="$PROJECT_DIR$/packages/features/splash/melos_splash.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/core/syncronizer/melos_syncronizer.iml" filepath="$PROJECT_DIR$/packages/core/syncronizer/melos_syncronizer.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/core/widgets/melos_widgets.iml" filepath="$PROJECT_DIR$/packages/core/widgets/melos_widgets.iml"/>
 <module fileurl="file://$PROJECT_DIR$/melos_coba_aja_workspace.iml" filepath="$PROJECT_DIR$/melos_coba_aja_workspace.iml"/>
     </modules>

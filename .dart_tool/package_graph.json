@@ -504,7 +504,7 @@
     },
     {
       "name": "injectable_generator",
-      "version": "2.12.0",
+      "version": "2.12.1",
       "dependencies": [
         "analyzer",
         "build",
@@ -530,7 +530,7 @@
     },
     {
       "name": "auto_route_generator",
-      "version": "10.4.0",
+      "version": "10.5.0",
       "dependencies": [
         "analyzer",
         "auto_route",
@@ -556,7 +556,7 @@
     },
     {
       "name": "json_serializable",
-      "version": "6.13.0",
+      "version": "6.13.1",
       "dependencies": [
         "analyzer",
         "async",
@@ -581,7 +581,7 @@
     },
     {
       "name": "build_runner",
-      "version": "2.11.1",
+      "version": "2.13.1",
       "dependencies": [
         "analyzer",
         "args",
@@ -618,7 +618,7 @@
     },
     {
       "name": "melos",
-      "version": "7.4.0",
+      "version": "7.5.0",
       "dependencies": [
         "ansi_styles",
         "args",
@@ -665,7 +665,7 @@
     },
     {
       "name": "dart_style",
-      "version": "3.1.3",
+      "version": "3.1.7",
       "dependencies": [
         "analyzer",
         "args",
@@ -679,7 +679,7 @@
     },
     {
       "name": "source_gen",
-      "version": "4.2.0",
+      "version": "4.2.2",
       "dependencies": [
         "analyzer",
         "async",
@@ -694,7 +694,7 @@
     },
     {
       "name": "build_config",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "dependencies": [
         "checked_yaml",
         "json_annotation",
@@ -704,7 +704,7 @@
     },
     {
       "name": "build",
-      "version": "4.0.4",
+      "version": "4.0.5",
       "dependencies": [
         "analyzer",
         "crypto",
@@ -716,7 +716,7 @@
     },
     {
       "name": "analyzer",
-      "version": "9.0.0",
+      "version": "10.0.1",
       "dependencies": [
         "_fe_analyzer_shared",
         "collection",
@@ -792,7 +792,7 @@
     },
     {
       "name": "async",
-      "version": "2.13.0",
+      "version": "2.13.1",
       "dependencies": [
         "collection",
         "meta"
@@ -809,7 +809,7 @@
     },
     {
       "name": "lean_builder",
-      "version": "0.1.6",
+      "version": "0.1.7",
       "dependencies": [
         "_fe_analyzer_shared",
         "analyzer",
@@ -861,7 +861,7 @@
     },
     {
       "name": "shared_preferences",
-      "version": "2.5.4",
+      "version": "2.5.5",
       "dependencies": [
         "flutter",
         "shared_preferences_android",
@@ -895,7 +895,7 @@
     },
     {
       "name": "source_helper",
-      "version": "1.3.10",
+      "version": "1.3.11",
       "dependencies": [
         "analyzer",
         "source_gen"
@@ -934,7 +934,7 @@
     },
     {
       "name": "watcher",
-      "version": "1.1.4",
+      "version": "1.2.1",
       "dependencies": [
         "async",
         "path"
@@ -1025,7 +1025,7 @@
     },
     {
       "name": "built_value",
-      "version": "8.12.4",
+      "version": "8.12.5",
       "dependencies": [
         "built_collection",
         "collection",
@@ -1107,7 +1107,7 @@
     },
     {
       "name": "firebase_messaging",
-      "version": "16.1.2",
+      "version": "16.1.3",
       "dependencies": [
         "firebase_core",
         "firebase_core_platform_interface",
@@ -1119,7 +1119,7 @@
     },
     {
       "name": "firebase_core",
-      "version": "4.5.0",
+      "version": "4.6.0",
       "dependencies": [
         "firebase_core_platform_interface",
         "firebase_core_web",
@@ -1220,7 +1220,7 @@
     },
     {
       "name": "mustache_template",
-      "version": "2.0.3",
+      "version": "2.0.4",
       "dependencies": []
     },
     {
@@ -1256,7 +1256,7 @@
     },
     {
       "name": "cli_launcher",
-      "version": "0.3.2+1",
+      "version": "0.3.3+1",
       "dependencies": [
         "path",
         "yaml"
@@ -1287,9 +1287,10 @@
     },
     {
       "name": "_fe_analyzer_shared",
-      "version": "92.0.0",
+      "version": "93.0.0",
       "dependencies": [
-        "meta"
+        "meta",
+        "source_span"
       ]
     },
     {
@@ -1405,7 +1406,7 @@
     },
     {
       "name": "shared_preferences_platform_interface",
-      "version": "2.4.1",
+      "version": "2.4.2",
       "dependencies": [
         "flutter",
         "plugin_platform_interface"
@@ -1433,7 +1434,7 @@
     },
     {
       "name": "shared_preferences_android",
-      "version": "2.4.21",
+      "version": "2.4.23",
       "dependencies": [
         "flutter",
         "shared_preferences_platform_interface"
@@ -1538,7 +1539,7 @@
     },
     {
       "name": "firebase_messaging_web",
-      "version": "4.1.3",
+      "version": "4.1.4",
       "dependencies": [
         "_flutterfire_internals",
         "firebase_core",
@@ -1552,7 +1553,7 @@
     },
     {
       "name": "firebase_messaging_platform_interface",
-      "version": "4.7.7",
+      "version": "4.7.8",
       "dependencies": [
         "_flutterfire_internals",
         "firebase_core",
@@ -1563,7 +1564,7 @@
     },
     {
       "name": "firebase_core_platform_interface",
-      "version": "6.0.2",
+      "version": "6.0.3",
       "dependencies": [
         "collection",
         "flutter",
@@ -1574,7 +1575,7 @@
     },
     {
       "name": "firebase_core_web",
-      "version": "3.5.0",
+      "version": "3.5.1",
       "dependencies": [
         "firebase_core_platform_interface",
         "flutter",
@@ -1789,7 +1790,7 @@
     },
     {
       "name": "_flutterfire_internals",
-      "version": "1.3.67",
+      "version": "1.3.68",
       "dependencies": [
         "collection",
         "firebase_core",
@@ -1838,7 +1839,7 @@
     },
     {
       "name": "path_provider_android",
-      "version": "2.2.22",
+      "version": "2.2.23",
       "dependencies": [
         "flutter",
         "path_provider_platform_interface"
