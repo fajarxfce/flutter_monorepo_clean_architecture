@@ -1,6 +1,6 @@
-import 'package:syncronizer/src/sync_result.dart';
-import 'package:syncronizer/src/sync_task.dart';
-import 'package:syncronizer/src/synchronizer.dart';
+import 'sync_result.dart';
+import 'sync_task.dart';
+import 'synchronizer.dart';
 
 class SyncManager {
   final Synchronizer synchronizer;

@@ -974,8 +974,8 @@
       "languageVersion": "3.10"
     },
     {
-      "name": "syncronizer",
-      "rootUri": "../packages/core/syncronizer",
+      "name": "sync",
+      "rootUri": "../packages/sync",
       "packageUri": "lib/",
       "languageVersion": "3.11"
     },

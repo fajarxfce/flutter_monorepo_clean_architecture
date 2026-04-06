@@ -1,4 +1,4 @@
-import 'package:syncronizer/src/model/network_change_list.dart';
+import 'model/network_change_list.dart';
 
 class SyncTask {
   final String key;

@@ -20,7 +20,7 @@
     "sign_in",
     "sign_up",
     "splash",
-    "syncronizer",
+    "sync",
     "widgets"
   ],
   "packages": [
@@ -76,7 +76,7 @@
       ]
     },
     {
-      "name": "syncronizer",
+      "name": "sync",
       "version": "0.0.1",
       "dependencies": [
         "flutter"
