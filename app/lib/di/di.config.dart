@@ -18,6 +18,7 @@ import 'package:network/di/di.module.dart' as _i1017;
 import 'package:notifications/src/di/di.module.dart' as _i129;
 import 'package:sign_in/di/di.module.dart' as _i890;
 import 'package:splash/di/di.module.dart' as _i53;
+import 'package:sync/syncronizer.dart' as _i938;
 
 import '../router/app_router.dart' as _i81;
 import '../router/auth_guard.dart' as _i313;
@@ -35,6 +36,7 @@ Future<_i174.GetIt> $initGetIt(
   await _i53.SplashPackageModule().init(gh);
   final appModule = _$AppModule();
   gh.singleton<_i313.AuthGuard>(() => appModule.authGuard);
+  gh.singleton<_i938.WorkerRegistry>(() => appModule.workerRegistry());
   gh.factory<String>(() => appModule.baseUrl, instanceName: 'BaseUrl');
   gh.singleton<_i81.AppRouter>(
     () => appModule.appRouter(gh<_i313.AuthGuard>()),
