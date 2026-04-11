@@ -6,7 +6,7 @@ import 'splash_state.dart';
 
 @injectable
 class SplashBloc extends Bloc<SplashEvent, SplashState> {
-  final AuthTokenLocalDataSource _tokenDataSource;
+  final CredentialLocalDataSource _tokenDataSource;
 
   SplashBloc(this._tokenDataSource) : super(const SplashState.initial()) {
     on<CheckAuth>(_onCheckAuth);

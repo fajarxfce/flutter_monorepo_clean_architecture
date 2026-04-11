@@ -3,7 +3,7 @@ import 'package:shared/shared.dart';
 
 @singleton
 class AuthInterceptor extends Interceptor {
-  final AuthTokenLocalDataSource _tokenDataSource;
+  final CredentialLocalDataSource _tokenDataSource;
 
   AuthInterceptor(this._tokenDataSource);
 

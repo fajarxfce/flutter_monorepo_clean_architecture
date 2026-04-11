@@ -13,16 +13,19 @@ import 'package:network/src/interceptor/auth_interceptor.dart' as _i114;
 import 'package:shared/shared.dart' as _i811;
 
 class NetworkPackageModule extends _i526.MicroPackageModule {
-// initializes the registration of main-scope dependencies inside of GetIt
+  // initializes the registration of main-scope dependencies inside of GetIt
   @override
   _i687.FutureOr<void> init(_i526.GetItHelper gh) {
     final networkModule = _$NetworkModule();
     gh.singleton<_i114.AuthInterceptor>(
-        () => _i114.AuthInterceptor(gh<_i437.AuthTokenLocalDataSource>()));
-    gh.lazySingleton<_i811.Dio>(() => networkModule.dio(
-          gh<_i114.AuthInterceptor>(),
-          gh<String>(instanceName: 'BaseUrl'),
-        ));
+      () => _i114.AuthInterceptor(gh<_i437.CredentialLocalDataSource>()),
+    );
+    gh.lazySingleton<_i811.Dio>(
+      () => networkModule.dio(
+        gh<_i114.AuthInterceptor>(),
+        gh<String>(instanceName: 'BaseUrl'),
+      ),
+    );
   }
 }
 

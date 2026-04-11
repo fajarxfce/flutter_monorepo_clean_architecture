@@ -39,7 +39,7 @@ Future<void> configureDependencies() async {
 @module
 abstract class AppModule {
   @singleton
-  AuthGuard get authGuard => AuthGuard(getIt<AuthTokenLocalDataSource>());
+  AuthGuard get authGuard => AuthGuard(getIt<CredentialLocalDataSource>());
 
   @singleton
   AppRouter appRouter(AuthGuard authGuard) => AppRouter(authGuard: authGuard);

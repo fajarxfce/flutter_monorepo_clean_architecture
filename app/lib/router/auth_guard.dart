@@ -3,7 +3,7 @@ import 'package:data/data.dart';
 import 'package:sign_in/sign_in.dart';
 
 class AuthGuard extends AutoRouteGuard {
-  final AuthTokenLocalDataSource tokenDataSource;
+  final CredentialLocalDataSource tokenDataSource;
 
   AuthGuard(this.tokenDataSource);
 

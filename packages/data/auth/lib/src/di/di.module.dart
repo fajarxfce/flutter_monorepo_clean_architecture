@@ -17,18 +17,22 @@ import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared/shared.dart' as _i811;
 
 class AuthDataPackageModule extends _i526.MicroPackageModule {
-// initializes the registration of main-scope dependencies inside of GetIt
+  // initializes the registration of main-scope dependencies inside of GetIt
   @override
   _i687.FutureOr<void> init(_i526.GetItHelper gh) {
     final authDataModule = _$AuthDataModule();
     gh.singleton<_i581.AuthApiService>(
-        () => authDataModule.provideAuthApiService(gh<_i811.Dio>()));
+      () => authDataModule.provideAuthApiService(gh<_i811.Dio>()),
+    );
     gh.singleton<_i778.AuthRemoteDatasource>(
-        () => _i73.AuthRemoteDatasourceImpl(gh<_i581.AuthApiService>()));
-    gh.singleton<_i60.AuthRepository>(() => _i522.AuthRepositoryImpl(
-          gh<_i778.AuthRemoteDatasource>(),
-          gh<_i437.AuthTokenLocalDataSource>(),
-        ));
+      () => _i73.AuthRemoteDatasourceImpl(gh<_i581.AuthApiService>()),
+    );
+    gh.singleton<_i60.AuthRepository>(
+      () => _i522.AuthRepositoryImpl(
+        gh<_i778.AuthRemoteDatasource>(),
+        gh<_i437.CredentialLocalDataSource>(),
+      ),
+    );
   }
 }
 

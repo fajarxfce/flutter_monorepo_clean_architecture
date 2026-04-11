@@ -9,7 +9,7 @@ import 'package:shared/shared.dart';
 @Singleton(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDatasource _remoteDatasource;
-  final AuthTokenLocalDataSource _tokenDataSource;
+  final CredentialLocalDataSource _tokenDataSource;
 
   AuthRepositoryImpl(this._remoteDatasource, this._tokenDataSource);
 
