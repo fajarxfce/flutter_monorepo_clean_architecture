@@ -14,6 +14,24 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:notifications/notifications.dart';
 import 'package:app/router/notification_handler.dart';
 import 'firebase_options.dart';
+import 'package:workmanager/workmanager.dart';
+import 'package:sync/syncronizer.dart';
+
+@pragma('vm:entry-point')
+void callbackDispatcher() {
+  Workmanager().executeTask((taskName, inputData) async {
+    // 1. Setup DI - Pastikan semua file di memory isolate terinisialisasi
+    await configureDependencies();
+
+    // 2. Ambil Registry untuk merutekan WorkerTask
+    final registry = GetIt.I<WorkerRegistry>();
+    
+    // 3. Eksekusi worker task-nya
+    final result = await registry.executeTask(taskName, inputData);
+
+    return result == WorkerResult.success;
+  });
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,6 +48,13 @@ void main() async {
   }
 
   await configureDependencies();
+
+  if (!Platform.isLinux) {
+    Workmanager().initialize(
+      callbackDispatcher, // Fungsi top-level ini dilimpahkan ke workmanager
+      isInDebugMode: F.appFlavor == Flavor.dev, // Hanya nyala saat dev
+    );
+  }
 
   final appRouter = GetIt.I<AppRouter>();
 

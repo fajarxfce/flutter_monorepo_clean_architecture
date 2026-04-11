@@ -64,7 +64,9 @@
         "sign_in",
         "sign_up",
         "splash",
-        "widgets"
+        "sync",
+        "widgets",
+        "workmanager"
       ],
       "devDependencies": [
         "auto_route_generator",
@@ -383,6 +385,16 @@
       ]
     },
     {
+      "name": "workmanager",
+      "version": "0.9.0+3",
+      "dependencies": [
+        "flutter",
+        "workmanager_android",
+        "workmanager_apple",
+        "workmanager_platform_interface"
+      ]
+    },
+    {
       "name": "freezed_annotation",
       "version": "3.1.0",
       "dependencies": [
@@ -647,6 +659,43 @@
       ]
     },
     {
+      "name": "workmanager_apple",
+      "version": "0.9.1+2",
+      "dependencies": [
+        "flutter",
+        "workmanager_platform_interface"
+      ]
+    },
+    {
+      "name": "workmanager_android",
+      "version": "0.9.0+2",
+      "dependencies": [
+        "flutter",
+        "workmanager_platform_interface"
+      ]
+    },
+    {
+      "name": "workmanager_platform_interface",
+      "version": "0.9.1+1",
+      "dependencies": [
+        "flutter",
+        "meta",
+        "plugin_platform_interface"
+      ]
+    },
+    {
+      "name": "flutter",
+      "version": "0.0.0",
+      "dependencies": [
+        "characters",
+        "collection",
+        "material_color_utilities",
+        "meta",
+        "sky_engine",
+        "vector_math"
+      ]
+    },
+    {
       "name": "meta",
       "version": "1.17.0",
       "dependencies": []
@@ -739,18 +788,6 @@
         "collection",
         "flutter",
         "nested"
-      ]
-    },
-    {
-      "name": "flutter",
-      "version": "0.0.0",
-      "dependencies": [
-        "characters",
-        "collection",
-        "material_color_utilities",
-        "meta",
-        "sky_engine",
-        "vector_math"
       ]
     },
     {
@@ -1268,6 +1305,35 @@
       "dependencies": []
     },
     {
+      "name": "plugin_platform_interface",
+      "version": "2.1.8",
+      "dependencies": [
+        "meta"
+      ]
+    },
+    {
+      "name": "sky_engine",
+      "version": "0.0.0",
+      "dependencies": []
+    },
+    {
+      "name": "vector_math",
+      "version": "2.2.0",
+      "dependencies": []
+    },
+    {
+      "name": "material_color_utilities",
+      "version": "0.13.0",
+      "dependencies": [
+        "collection"
+      ]
+    },
+    {
+      "name": "characters",
+      "version": "1.4.1",
+      "dependencies": []
+    },
+    {
       "name": "source_span",
       "version": "1.10.2",
       "dependencies": [
@@ -1299,28 +1365,6 @@
       "dependencies": [
         "flutter"
       ]
-    },
-    {
-      "name": "sky_engine",
-      "version": "0.0.0",
-      "dependencies": []
-    },
-    {
-      "name": "vector_math",
-      "version": "2.2.0",
-      "dependencies": []
-    },
-    {
-      "name": "material_color_utilities",
-      "version": "0.13.0",
-      "dependencies": [
-        "collection"
-      ]
-    },
-    {
-      "name": "characters",
-      "version": "1.4.1",
-      "dependencies": []
     },
     {
       "name": "typed_data",
@@ -1717,13 +1761,6 @@
       "version": "0.0.0",
       "dependencies": [
         "flutter"
-      ]
-    },
-    {
-      "name": "plugin_platform_interface",
-      "version": "2.1.8",
-      "dependencies": [
-        "meta"
       ]
     },
     {

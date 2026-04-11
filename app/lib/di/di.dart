@@ -5,6 +5,7 @@ import 'package:data/data.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:app/flavors.dart';
+import 'package:sync/syncronizer.dart';
 import 'package:data/di/di.module.dart';
 import 'package:network/di/di.module.dart';
 import 'package:notifications/src/di/di.module.dart';
@@ -42,6 +43,16 @@ abstract class AppModule {
 
   @singleton
   AppRouter appRouter(AuthGuard authGuard) => AppRouter(authGuard: authGuard);
+
+  @singleton
+  WorkerRegistry workerRegistry() {
+    final registry = WorkerRegistry();
+    // registry.registerTasks([
+    //   // Tambahkan object WorkerTask-mu di sini nanti
+    //   // ClearCacheWorker(),
+    // ]);
+    return registry;
+  }
 
   @Named('BaseUrl')
   String get baseUrl => F.baseUrl;
