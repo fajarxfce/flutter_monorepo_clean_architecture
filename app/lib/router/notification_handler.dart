@@ -6,7 +6,8 @@ import 'package:notifications/notifications.dart';
 import 'app_router.dart';
 
 class NotificationHandler {
-  final NotificationService _notificationService = GetIt.I<NotificationService>();
+  final NotificationService _notificationService =
+      GetIt.I<NotificationService>();
   final AppRouter appRouter;
 
   NotificationHandler(this.appRouter);

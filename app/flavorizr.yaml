@@ -11,6 +11,18 @@ flavors:
     android:
       applicationId: "com.fajar.app"
 
+  devProxy:
+    app:
+      name: "Belajar Dev Proxy"
+    android:
+      applicationId: "com.fajar.app.dev"
+
+  prodProxy:
+    app:
+      name: "Belajar Proxy"
+    android:
+      applicationId: "com.fajar.app"
+
 instructions:
   - assets:download
   - assets:extract

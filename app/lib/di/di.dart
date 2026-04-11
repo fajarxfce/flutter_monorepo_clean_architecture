@@ -56,4 +56,10 @@ abstract class AppModule {
 
   @Named('BaseUrl')
   String get baseUrl => F.baseUrl;
+
+  @Named('IsProxy')
+  bool get isProxy => F.isProxy;
+
+  @Named('ProxyUrl')
+  String get proxyUrl => F.proxyUrl;
 }

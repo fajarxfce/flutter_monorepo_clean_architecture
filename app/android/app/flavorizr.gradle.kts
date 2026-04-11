@@ -16,5 +16,15 @@ android.apply {
             applicationId = "com.fajar.app"
             resValue(type = "string", name = "app_name", value = "Belajar")
         }
+        create("devProxy") {
+            dimension = "flavor-type"
+            applicationId = "com.fajar.app.dev"
+            resValue(type = "string", name = "app_name", value = "Belajar Dev Proxy")
+        }
+        create("prodProxy") {
+            dimension = "flavor-type"
+            applicationId = "com.fajar.app"
+            resValue(type = "string", name = "app_name", value = "Belajar Proxy")
+        }
     }
 }

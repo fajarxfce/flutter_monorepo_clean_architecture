@@ -38,6 +38,8 @@ Future<_i174.GetIt> $initGetIt(
   gh.singleton<_i313.AuthGuard>(() => appModule.authGuard);
   gh.singleton<_i938.WorkerRegistry>(() => appModule.workerRegistry());
   gh.factory<String>(() => appModule.baseUrl, instanceName: 'BaseUrl');
+  gh.factory<bool>(() => appModule.isProxy, instanceName: 'IsProxy');
+  gh.factory<String>(() => appModule.proxyUrl, instanceName: 'ProxyUrl');
   gh.singleton<_i81.AppRouter>(
     () => appModule.appRouter(gh<_i313.AuthGuard>()),
   );

@@ -22,6 +22,8 @@ class NetworkPackageModule extends _i526.MicroPackageModule {
     gh.lazySingleton<_i811.Dio>(() => networkModule.dio(
           gh<_i114.AuthInterceptor>(),
           gh<String>(instanceName: 'BaseUrl'),
+          gh<bool>(instanceName: 'IsProxy'),
+          gh<String>(instanceName: 'ProxyUrl'),
         ));
   }
 }
