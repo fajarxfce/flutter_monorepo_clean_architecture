@@ -15,7 +15,7 @@ abstract class NetworkModule {
     dio.interceptors.add(authInterceptor);
 
     // The DRY extension call
-    dio.applyProxy(isProxy: true, proxyUrl: proxyUrl);
+    dio.applyProxy(isProxy: isProxy, proxyUrl: proxyUrl);
 
     return dio;
   }

@@ -1,4 +1,4 @@
-enum Flavor { dev, prod, devproxy, prodproxy }
+enum Flavor { dev, prod, devProxy, prodProxy }
 
 class F {
   static late final Flavor appFlavor;
@@ -11,9 +11,9 @@ class F {
         return 'Belajar Dev';
       case Flavor.prod:
         return 'Belajar';
-      case Flavor.devproxy:
+      case Flavor.devProxy:
         return 'Belajar Dev Proxy';
-      case Flavor.prodproxy:
+      case Flavor.prodProxy:
         return 'Belajar Proxy';
     }
   }
@@ -21,10 +21,10 @@ class F {
   static String get baseUrl {
     switch (appFlavor) {
       case Flavor.dev:
-      case Flavor.devproxy:
+      case Flavor.devProxy:
         return 'https://pos.karuhundeveloper.com/api';
       case Flavor.prod:
-      case Flavor.prodproxy:
+      case Flavor.prodProxy:
         return 'https://pos.karuhundeveloper.com/api';
     }
   }
@@ -37,9 +37,9 @@ class F {
         return false;
       case Flavor.prod:
         return false;
-      case Flavor.devproxy:
+      case Flavor.devProxy:
         return true;
-      case Flavor.prodproxy:
+      case Flavor.prodProxy:
         return true;
     }
   }
