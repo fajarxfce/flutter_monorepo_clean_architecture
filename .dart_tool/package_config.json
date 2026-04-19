@@ -285,7 +285,7 @@
     },
     {
       "name": "flutter",
-      "rootUri": "file:///opt/flutter/packages/flutter",
+      "rootUri": "file:///home/fajar/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "3.9"
     },
@@ -375,13 +375,13 @@
     },
     {
       "name": "flutter_test",
-      "rootUri": "file:///opt/flutter/packages/flutter_test",
+      "rootUri": "file:///home/fajar/flutter/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "3.9"
     },
     {
       "name": "flutter_web_plugins",
-      "rootUri": "file:///opt/flutter/packages/flutter_web_plugins",
+      "rootUri": "file:///home/fajar/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "3.9"
     },
@@ -807,7 +807,7 @@
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///opt/flutter/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///home/fajar/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "3.9"
     },
@@ -1119,8 +1119,8 @@
     }
   ],
   "generator": "pub",
-  "generatorVersion": "3.11.4",
-  "flutterRoot": "file:///opt/flutter",
-  "flutterVersion": "3.41.6",
+  "generatorVersion": "3.11.5",
+  "flutterRoot": "file:///home/fajar/flutter",
+  "flutterVersion": "3.41.7",
   "pubCache": "file:///home/fajar/.pub-cache"
 }

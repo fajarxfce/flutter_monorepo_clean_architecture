@@ -1,5 +1,5 @@
-import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:app/router/app_router.dart';
 import 'package:app/di/di.dart';
@@ -25,7 +25,7 @@ void callbackDispatcher() {
 
     // 2. Ambil Registry untuk merutekan WorkerTask
     final registry = GetIt.I<WorkerRegistry>();
-    
+
     // 3. Eksekusi worker task-nya
     final result = await registry.executeTask(taskName, inputData);
 
@@ -41,7 +41,7 @@ void main() async {
     orElse: () => Flavor.dev,
   );
 
-  if (!Platform.isLinux) {
+  if (!kIsWeb) {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
@@ -49,7 +49,7 @@ void main() async {
 
   await configureDependencies();
 
-  if (!Platform.isLinux) {
+  if (!kIsWeb) {
     Workmanager().initialize(
       callbackDispatcher, // Fungsi top-level ini dilimpahkan ke workmanager
       isInDebugMode: F.appFlavor == Flavor.dev, // Hanya nyala saat dev
@@ -58,7 +58,7 @@ void main() async {
 
   final appRouter = GetIt.I<AppRouter>();
 
-  if (!Platform.isLinux) {
+  if (!kIsWeb) {
     final notificationService = GetIt.I<NotificationService>();
     await notificationService.initialize();
     debugPrint('token: ${await notificationService.getToken()}');
