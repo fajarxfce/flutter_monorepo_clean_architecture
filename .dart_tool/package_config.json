@@ -287,7 +287,7 @@
       "name": "flutter",
       "rootUri": "file:///home/fajar/flutter/packages/flutter",
       "packageUri": "lib/",
-      "languageVersion": "3.9"
+      "languageVersion": "3.10"
     },
     {
       "name": "flutter_bloc",
@@ -377,13 +377,13 @@
       "name": "flutter_test",
       "rootUri": "file:///home/fajar/flutter/packages/flutter_test",
       "packageUri": "lib/",
-      "languageVersion": "3.9"
+      "languageVersion": "3.10"
     },
     {
       "name": "flutter_web_plugins",
       "rootUri": "file:///home/fajar/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
-      "languageVersion": "3.9"
+      "languageVersion": "3.10"
     },
     {
       "name": "font_awesome_flutter",
@@ -573,7 +573,7 @@
     },
     {
       "name": "meta",
-      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/meta-1.17.0",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/meta-1.18.0",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
@@ -809,7 +809,7 @@
       "name": "sky_engine",
       "rootUri": "file:///home/fajar/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
-      "languageVersion": "3.9"
+      "languageVersion": "3.10"
     },
     {
       "name": "sliver_tools",
@@ -873,7 +873,7 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/test_api-0.7.10",
+      "rootUri": "file:///home/fajar/.pub-cache/hosted/pub.dev/test_api-0.7.11",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -1119,8 +1119,8 @@
     }
   ],
   "generator": "pub",
-  "generatorVersion": "3.11.5",
+  "generatorVersion": "3.12.2",
   "flutterRoot": "file:///home/fajar/flutter",
-  "flutterVersion": "3.41.7",
+  "flutterVersion": "3.44.4",
   "pubCache": "file:///home/fajar/.pub-cache"
 }

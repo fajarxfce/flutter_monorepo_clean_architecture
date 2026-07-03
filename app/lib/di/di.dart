@@ -13,6 +13,7 @@ import 'package:auth_data/src/di/di.module.dart';
 import 'package:auth_domain/src/di/di.module.dart';
 import 'package:sign_in/di/di.module.dart';
 import 'package:splash/di/di.module.dart';
+import 'package:home/di/di.module.dart';
 
 final getIt = GetIt.instance;
 
@@ -24,6 +25,7 @@ final getIt = GetIt.instance;
     ExternalModule(DataPackageModule),
     ExternalModule(NotificationsPackageModule),
     ExternalModule(SplashPackageModule),
+    ExternalModule(HomePackageModule),
   ],
   externalPackageModulesAfter: [
     ExternalModule(NetworkPackageModule),

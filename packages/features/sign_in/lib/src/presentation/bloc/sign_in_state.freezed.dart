@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$SignInState {
 
- SignInStatus get status; String get message; Login? get loginData;
+ SignInStatus get status; String get message; bool get rememberMe; String get savedEmail; Login? get loginData;
 /// Create a copy of SignInState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $SignInStateCopyWith<SignInState> get copyWith => _$SignInStateCopyWithImpl<Sign
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignInState&&(identical(other.status, status) || other.status == status)&&(identical(other.message, message) || other.message == message)&&(identical(other.loginData, loginData) || other.loginData == loginData));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignInState&&(identical(other.status, status) || other.status == status)&&(identical(other.message, message) || other.message == message)&&(identical(other.rememberMe, rememberMe) || other.rememberMe == rememberMe)&&(identical(other.savedEmail, savedEmail) || other.savedEmail == savedEmail)&&(identical(other.loginData, loginData) || other.loginData == loginData));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,message,loginData);
+int get hashCode => Object.hash(runtimeType,status,message,rememberMe,savedEmail,loginData);
 
 @override
 String toString() {
-  return 'SignInState(status: $status, message: $message, loginData: $loginData)';
+  return 'SignInState(status: $status, message: $message, rememberMe: $rememberMe, savedEmail: $savedEmail, loginData: $loginData)';
 }
 
 
@@ -45,7 +45,7 @@ abstract mixin class $SignInStateCopyWith<$Res>  {
   factory $SignInStateCopyWith(SignInState value, $Res Function(SignInState) _then) = _$SignInStateCopyWithImpl;
 @useResult
 $Res call({
- SignInStatus status, String message, Login? loginData
+ SignInStatus status, String message, bool rememberMe, String savedEmail, Login? loginData
 });
 
 
@@ -62,10 +62,12 @@ class _$SignInStateCopyWithImpl<$Res>
 
 /// Create a copy of SignInState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? message = null,Object? loginData = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? message = null,Object? rememberMe = null,Object? savedEmail = null,Object? loginData = freezed,}) {
   return _then(_self.copyWith(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as SignInStatus,message: null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String,rememberMe: null == rememberMe ? _self.rememberMe : rememberMe // ignore: cast_nullable_to_non_nullable
+as bool,savedEmail: null == savedEmail ? _self.savedEmail : savedEmail // ignore: cast_nullable_to_non_nullable
 as String,loginData: freezed == loginData ? _self.loginData : loginData // ignore: cast_nullable_to_non_nullable
 as Login?,
   ));
@@ -152,10 +154,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( SignInStatus status,  String message,  Login? loginData)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( SignInStatus status,  String message,  bool rememberMe,  String savedEmail,  Login? loginData)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _SignInState() when $default != null:
-return $default(_that.status,_that.message,_that.loginData);case _:
+return $default(_that.status,_that.message,_that.rememberMe,_that.savedEmail,_that.loginData);case _:
   return orElse();
 
 }
@@ -173,10 +175,10 @@ return $default(_that.status,_that.message,_that.loginData);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( SignInStatus status,  String message,  Login? loginData)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( SignInStatus status,  String message,  bool rememberMe,  String savedEmail,  Login? loginData)  $default,) {final _that = this;
 switch (_that) {
 case _SignInState():
-return $default(_that.status,_that.message,_that.loginData);case _:
+return $default(_that.status,_that.message,_that.rememberMe,_that.savedEmail,_that.loginData);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -193,10 +195,10 @@ return $default(_that.status,_that.message,_that.loginData);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( SignInStatus status,  String message,  Login? loginData)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( SignInStatus status,  String message,  bool rememberMe,  String savedEmail,  Login? loginData)?  $default,) {final _that = this;
 switch (_that) {
 case _SignInState() when $default != null:
-return $default(_that.status,_that.message,_that.loginData);case _:
+return $default(_that.status,_that.message,_that.rememberMe,_that.savedEmail,_that.loginData);case _:
   return null;
 
 }
@@ -208,11 +210,13 @@ return $default(_that.status,_that.message,_that.loginData);case _:
 
 
 class _SignInState implements SignInState {
-  const _SignInState({this.status = SignInStatus.initial, this.message = '', this.loginData});
+  const _SignInState({this.status = SignInStatus.initial, this.message = '', this.rememberMe = false, this.savedEmail = '', this.loginData});
   
 
 @override@JsonKey() final  SignInStatus status;
 @override@JsonKey() final  String message;
+@override@JsonKey() final  bool rememberMe;
+@override@JsonKey() final  String savedEmail;
 @override final  Login? loginData;
 
 /// Create a copy of SignInState
@@ -225,16 +229,16 @@ _$SignInStateCopyWith<_SignInState> get copyWith => __$SignInStateCopyWithImpl<_
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SignInState&&(identical(other.status, status) || other.status == status)&&(identical(other.message, message) || other.message == message)&&(identical(other.loginData, loginData) || other.loginData == loginData));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SignInState&&(identical(other.status, status) || other.status == status)&&(identical(other.message, message) || other.message == message)&&(identical(other.rememberMe, rememberMe) || other.rememberMe == rememberMe)&&(identical(other.savedEmail, savedEmail) || other.savedEmail == savedEmail)&&(identical(other.loginData, loginData) || other.loginData == loginData));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,message,loginData);
+int get hashCode => Object.hash(runtimeType,status,message,rememberMe,savedEmail,loginData);
 
 @override
 String toString() {
-  return 'SignInState(status: $status, message: $message, loginData: $loginData)';
+  return 'SignInState(status: $status, message: $message, rememberMe: $rememberMe, savedEmail: $savedEmail, loginData: $loginData)';
 }
 
 
@@ -245,7 +249,7 @@ abstract mixin class _$SignInStateCopyWith<$Res> implements $SignInStateCopyWith
   factory _$SignInStateCopyWith(_SignInState value, $Res Function(_SignInState) _then) = __$SignInStateCopyWithImpl;
 @override @useResult
 $Res call({
- SignInStatus status, String message, Login? loginData
+ SignInStatus status, String message, bool rememberMe, String savedEmail, Login? loginData
 });
 
 
@@ -262,10 +266,12 @@ class __$SignInStateCopyWithImpl<$Res>
 
 /// Create a copy of SignInState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? message = null,Object? loginData = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? message = null,Object? rememberMe = null,Object? savedEmail = null,Object? loginData = freezed,}) {
   return _then(_SignInState(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as SignInStatus,message: null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String,rememberMe: null == rememberMe ? _self.rememberMe : rememberMe // ignore: cast_nullable_to_non_nullable
+as bool,savedEmail: null == savedEmail ? _self.savedEmail : savedEmail // ignore: cast_nullable_to_non_nullable
 as String,loginData: freezed == loginData ? _self.loginData : loginData // ignore: cast_nullable_to_non_nullable
 as Login?,
   ));

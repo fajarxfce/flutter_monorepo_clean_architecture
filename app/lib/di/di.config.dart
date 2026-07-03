@@ -13,6 +13,7 @@ import 'package:auth_data/src/di/di.module.dart' as _i383;
 import 'package:auth_domain/src/di/di.module.dart' as _i39;
 import 'package:data/di/di.module.dart' as _i220;
 import 'package:get_it/get_it.dart' as _i174;
+import 'package:home/di/di.module.dart' as _i486;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:network/di/di.module.dart' as _i1017;
 import 'package:notifications/src/di/di.module.dart' as _i129;
@@ -34,6 +35,7 @@ Future<_i174.GetIt> $initGetIt(
   await _i220.DataPackageModule().init(gh);
   await _i129.NotificationsPackageModule().init(gh);
   await _i53.SplashPackageModule().init(gh);
+  await _i486.HomePackageModule().init(gh);
   final appModule = _$AppModule();
   gh.singleton<_i313.AuthGuard>(() => appModule.authGuard);
   gh.singleton<_i938.WorkerRegistry>(() => appModule.workerRegistry());
